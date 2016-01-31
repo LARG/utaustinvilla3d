@@ -1,0 +1,1 @@
+### Default parameters loaded for all type 0 agents ###

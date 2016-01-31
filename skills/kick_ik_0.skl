@@ -1,0 +1,70 @@
+# Time is in seconds.
+# Angles are in degrees.
+
+# BALL IN FRONT OF PLAYER. Kicks forward
+# Assumes default position relative to ball around -- x = .2 y = .05
+
+STARTSKILL SKILL_KICK_IK_0_LEFT_LEG
+# State 0
+STARTSTATE
+settar EFF_LL1 0 EFF_LL2 0 EFF_LL3 10.0 EFF_LL4 -20.0 EFF_LL5 10.0 EFF_LL6 0 end
+settar EFF_RL1 0 EFF_RL2 0 EFF_RL3 10.0 EFF_RL4 -20.0 EFF_RL5 10.0 EFF_RL6 0 end
+
+settar EFF_RA2 -45 end
+settar EFF_LA2 -45 end
+
+settar EFF_RL2 5.0 EFF_RL6 -5.0 end
+settar EFF_LL2 5.0 EFF_LL6 -5.0 end
+
+settar EFF_RL2 12.0 EFF_RL6 -12.0 end
+settar EFF_LL2 10.0 EFF_LL6 -10.0 end
+
+inctar EFF_LL3 42.0 EFF_LL4 -42.0 EFF_LL5 12.0 end
+inctar EFF_RL3 35.0 EFF_RL4 -35.0 EFF_RL5 10.0 end
+
+inctar EFF_RL3 $kick_ik_0_off3_0 EFF_RL4 $kick_ik_0_off4_0 EFF_RL5 $kick_ik_0_off5_0 end
+
+wait 0.15 end
+ENDSTATE
+# Done shifting weight.
+
+# State 10
+STARTSTATE
+inctar EFF_RL3 $kick_ik_0_off3_1 EFF_RL4 $kick_ik_0_off4_1 EFF_RL5 $kick_ik_0_off5_1 end
+
+# Move the foot to a preset location w.r.t. the ball
+setfoot LEG_LEFT ($kick_ik_0_x0) ($kick_ik_0_y0) ($kick_ik_0_z0) ($kick_ik_0_a0) ($kick_ik_0_b0) ($kick_ik_0_c0) end
+wait .1 end
+ENDSTATE
+
+# B-Spline Curve
+STARTSTATE
+inctar EFF_RL3 $kick_ik_0_off3_2 EFF_RL4 $kick_ik_0_off4_2 EFF_RL5 $kick_ik_0_off5_2 end
+
+setscale EFF_LL2 $kick_ik_0_scale EFF_LL3 $kick_ik_0_scale EFF_LL4 $kick_ik_0_scale end
+STARTCURVE LEG_LEFT
+controlpoint ($kick_ik_0_x0) ($kick_ik_0_y0) ($kick_ik_0_z0) ($kick_ik_0_a0) ($kick_ik_0_b0) ($kick_ik_0_c0) end
+# swing leg back
+#controlpoint ($kick_ik_0_x1) ($kick_ik_0_y1) ($kick_ik_0_z1) ($kick_ik_0_a1) ($kick_ik_0_b1) ($kick_ik_0_c1) end
+# start swinging leg forward towards ball
+controlpoint ($kick_ik_0_x2) ($kick_ik_0_y2) ($kick_ik_0_z2) ($kick_ik_0_a2) ($kick_ik_0_b2) ($kick_ik_0_c2) end
+# swing leg through ball
+controlpoint ($kick_ik_0_x3) ($kick_ik_0_y3) ($kick_ik_0_z3) ($kick_ik_0_a3) ($kick_ik_0_b3) ($kick_ik_0_c3) end
+ENDCURVE
+wait ($kick_ik_0_wait) end
+ENDSTATE
+
+STARTSTATE
+wait .1 end
+ENDSTATE
+
+STARTSTATE
+setscale EFF_LL2 1 EFF_LL3 1 EFF_LL4 1 end
+reset LEG_LEFT LEG_RIGHT end
+wait .1 end
+ENDSTATE
+
+ENDSKILL 
+
+REFLECTSKILL SKILL_KICK_IK_0_LEFT_LEG SKILL_KICK_IK_0_RIGHT_LEG
+

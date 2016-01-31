@@ -1,0 +1,80 @@
+### Default parameters loaded for all type 3 agents ###
+
+
+
+
+
+
+
+########################
+### GETUP PARAMETERS ###
+########################
+
+# default getup off front params
+getup_parms_stateDownInitialWait	0.5
+getup_parms_stateDown3A1	30.7764844017273
+getup_parms_stateDown3L3	119.3951092085372
+getup_parms_stateDown3MinTime	0.04
+getup_parms_stateDown5L1	-39.89410836656779
+getup_parms_stateDown5MinTime	0.9
+getup_parms_stateDown7L1	-19.1526346095759
+getup_parms_stateDown7L3	55.60616379393237
+getup_parms_stateDown7MinTime	0.3
+getup_parms_stateDown10MinTime	0.8
+
+# default getup off back params
+getup_parms_stateUpInitialWait	0.5
+getup_parms_stateUp3A1	-88.44879972730456
+getup_parms_stateUp3A2	1.2650751481354092
+getup_parms_stateUp3A4	15.318596218175323
+getup_parms_stateUp3L3	0.27072610408623543
+getup_parms_stateUp3MinTime	0.2
+getup_parms_stateUp5L3	126.53954277987913
+getup_parms_stateUp5MinTime	0.04
+getup_parms_stateUp7L1	-90.02522017910263
+getup_parms_stateUp7MinTime	0.2
+getup_parms_stateUp9A1	5.918237260643215
+getup_parms_stateUp9L1	-109.96698066442023
+getup_parms_stateUp9L4	-98.17300293001794
+getup_parms_stateUp9L5	-65.20666747068728
+getup_parms_stateUp9L6	-25.76640050991913
+getup_parms_stateUp9MinTime	0.2
+getup_parms_stateUp11A1	6.330268348632011
+getup_parms_stateUp11L1	-69.78058382649299
+getup_parms_stateUp11L5	-52.56153330503647
+getup_parms_stateUp11MinTime	0.4
+getup_parms_stateUp13A1	-115.9932393763986
+getup_parms_stateUp13L1	-0.31676877560308014
+getup_parms_stateUp13L3	35.079736274565654
+getup_parms_stateUp13L4	-38.191314685309145
+getup_parms_stateUp13L5	36.389822164512594
+getup_parms_stateUp13MinTime	0.04 
+getup_parms_stateUp15MinTime	0.6
+
+
+#######################
+### KICK PARAMETERS ###
+#######################
+
+kick_p1	-50.621274188520516
+kick_p2	-96.48124266563154
+kick_p3	-66.3674550430713
+kick_p4	132.6079562207066
+kick_p5	26.422265770856786
+kick_p6	57.154201046228906
+kick_p7	5.702358695662072
+kick_p8	7.877504867837286
+kick_p9	11.522796502849335
+kick_p11	-36.71509862086306
+kick_p12	20.61374682005677
+kick_p13	-10.876276156708883
+kick_p14	0.7449309633741266
+kick_xoffset	-0.2408393951668601
+kick_yoffset	-0.06798389074706206
+kick_scale1	11.670309819784594
+kick_scale2	1.9954055020031927
+kick_scale3	-7.5688666112202645
+
+
+
+
