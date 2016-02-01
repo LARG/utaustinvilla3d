@@ -2,7 +2,7 @@
 #define _VISION_OBJECT_H
 
 
-#include "vecposition.h"
+#include "../math/vecposition.h"
 
 struct VisionObject {
 

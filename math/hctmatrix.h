@@ -1,7 +1,7 @@
 #ifndef HCTMATRIX_H
 #define HCTMATRIX_H
 
-#include "headers.h"
+#include "../headers/headers.h"
 #include "vecposition.h"
 
 #include <iostream>

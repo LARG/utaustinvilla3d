@@ -7,11 +7,11 @@ using boost::assign::map_list_of;      // bring 'map_list_of()' into scope
 #include <map>
 using std::map;
 
-#include "vecposition.h"
+#include "../math/vecposition.h"
 #include <vector>
 using std::vector;
-#include "Geometry.h"
-#include "VisionObject.h"
+#include "../math/Geometry.h"
+#include "../parser/VisionObject.h"
 
 enum WorldObjType {   // Types of objects
     WO_BALL,

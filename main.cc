@@ -7,10 +7,10 @@
 //#include <rcssnet/udpsocket.hpp>
 #include <rcssnet/exception.hpp>
 #include <netinet/in.h>
-#include "behavior.h"
-#include "naobehavior.h"
-#include "optimizationbehaviors.h"
-#include "pkbehaviors.h"
+#include "behaviors/behavior.h"
+#include "behaviors/naobehavior.h"
+#include "optimization/optimizationbehaviors.h"
+#include "behaviors/pkbehaviors.h"
 
 using namespace rcss::net;
 using namespace std;

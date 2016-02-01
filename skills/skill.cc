@@ -1,6 +1,6 @@
 #include <boost/foreach.hpp>
 #include "skill.h"
-#include "ikfast/ikfast.h"
+#include "../ikfast/ikfast.h"
 
 #define foreach         BOOST_FOREACH
 

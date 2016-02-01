@@ -1,15 +1,15 @@
 #include <cmath>
 
 #include "parser.h"
-#include "WorldObject.h"
-#include "audio.h"
-#include "headers.h"
-#include "worldmodel.h"
-#include "bodymodel.h"
+#include "../worldmodel/WorldObject.h"
+#include "../audio/audio.h"
+#include "../headers/headers.h"
+#include "../worldmodel/worldmodel.h"
+#include "../bodymodel/bodymodel.h"
 #include "VisionObject.h"
-#include "PFLocalization.h"
-#include "BallKF.h"
-#include "PlayerKF.h"
+#include "../particlefilter/PFLocalization.h"
+#include "../kalman/BallKF.h"
+#include "../kalman/PlayerKF.h"
 
 // For UT Walk
 #include <memory/Memory.h>

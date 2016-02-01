@@ -67,7 +67,7 @@ See DOCUMENTATION for some high level documentation about the codebase.
 
 
 ###Demo behaviors:
-See the methods in selectSkill() in strategy.cc for demo behaviors.
+See the methods in selectSkill() in behaviors/strategy.cc for demo behaviors.
 
 
 ###Optimization task example:
@@ -102,5 +102,7 @@ In Luis Almeida, Jianmin Ji, Gerald Steinbauer, and Sean Luke, editors, RoboCup-
 
 
 ### UT Austin Villa team contacts:
+
 Patrick MacAlpine (patmac@cs.utexas.edu)
+
 Peter Stone (pstone@cs.utexas.edu)

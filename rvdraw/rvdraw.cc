@@ -15,7 +15,7 @@
  */
 
 #include "rvdraw.h"
-#include "worldmodel.h" //for SIDE_RIGHT and SIDE_LEFT macros
+#include "../worldmodel/worldmodel.h" //for SIDE_RIGHT and SIDE_LEFT macros
 
 extern string mHost;
 

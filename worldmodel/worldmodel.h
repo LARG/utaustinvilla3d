@@ -1,12 +1,12 @@
 #ifndef WORLDMODEL_H
 #define WORLDMODEL_H
 
-#include "headers.h"
-#include "Geometry.h"
-#include "hctmatrix.h"
+#include "../headers/headers.h"
+#include "../math/Geometry.h"
+#include "../math/hctmatrix.h"
 #include "WorldObject.h"
-#include "Field.h"
-#include "rvdraw.h"
+#include "../headers/Field.h"
+#include "../rvdraw/rvdraw.h"
 
 class BallKF;
 class PlayerKF;

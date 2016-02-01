@@ -1,7 +1,7 @@
 #ifndef _OPTIMIZATION_BEHAVIORS_H
 #define _OPTIMIZATION_BEHAVIORS_H
 
-#include "naobehavior.h"
+#include "../behaviors/naobehavior.h"
 
 bool isBallMoving(const WorldModel *worldModel);
 

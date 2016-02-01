@@ -1,8 +1,8 @@
 #ifndef _PARTICLE_H
 #define _PARTICLE_H
 
-#include "Geometry.h"
-#include "WorldObject.h"
+#include "../math/Geometry.h"
+#include "../worldmodel/WorldObject.h"
 
 
 class Particle

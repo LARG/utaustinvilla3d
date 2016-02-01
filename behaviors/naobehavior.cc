@@ -6,9 +6,8 @@
 #include <cctype>
 #include <exception>
 
-#include "skillparser.h"
-#include "skill.h"
-#include "rvdraw.h"
+#include "../skills/skillparser.h"
+#include "../rvdraw/rvdraw.h"
 #include <assert.h>
 
 // For UT Walk

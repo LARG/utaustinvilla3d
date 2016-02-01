@@ -1,5 +1,5 @@
-#include "naobehavior.h"
-#include "audio.h"
+#include "../behaviors/naobehavior.h"
+#include "../audio/audio.h"
 #include <common/RobotInfo.h>
 
 extern int agentBodyType;

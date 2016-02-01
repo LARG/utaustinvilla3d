@@ -2,12 +2,12 @@
 #define NAOBEHAVIOR_H
 
 #include "behavior.h"
-#include "headers.h"
-#include "parser.h"
-#include "worldmodel.h"
-#include "bodymodel.h"
-#include "PFLocalization.h"
-#include "skill.h"
+#include "../headers/headers.h"
+#include "../parser/parser.h"
+#include "../worldmodel/worldmodel.h"
+#include "../bodymodel/bodymodel.h"
+#include "../particlefilter/PFLocalization.h"
+#include "../skills/skill.h"
 
 // For UT Walk
 #include <MotionCore.h>

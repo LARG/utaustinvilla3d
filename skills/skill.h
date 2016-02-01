@@ -2,7 +2,7 @@
 #define SKILL_H
 
 #include <boost/shared_ptr.hpp>
-#include "bodymodel.h"
+#include "../bodymodel/bodymodel.h"
 #include "curve3d.h"
 
 using namespace boost;

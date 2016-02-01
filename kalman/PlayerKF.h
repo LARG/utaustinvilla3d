@@ -3,10 +3,10 @@
 
 #include "OrigKalmanFilter.h"
 #include <common/NMatrix.h>
-#include "Geometry.h"
-#include "Field.h"
-#include "WorldObject.h"
-#include "worldmodel.h"
+#include "../math/Geometry.h"
+#include "../headers/Field.h"
+#include "../worldmodel/WorldObject.h"
+#include "../worldmodel/worldmodel.h"
 #include <stdarg.h>
 
 #define MAX_PLAYER_MODELS_UT NUM_AGENTS

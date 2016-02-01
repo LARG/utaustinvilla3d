@@ -1,6 +1,6 @@
 #include "worldmodel.h"
-#include "BallKF.h"
-#include "PlayerKF.h"
+#include "../kalman/BallKF.h"
+#include "../kalman/PlayerKF.h"
 
 WorldModel::WorldModel() {
 

@@ -1,8 +1,8 @@
 #ifndef _FIELD_H
 #define _FIELD_H
 
-#include "WorldObject.h"
-#include "Geometry.h"
+#include "../worldmodel/WorldObject.h"
+#include "../math/Geometry.h"
 #include <stdio.h>
 
 

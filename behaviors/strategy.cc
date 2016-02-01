@@ -1,5 +1,5 @@
 #include "naobehavior.h"
-#include "rvdraw.h"
+#include "../rvdraw/rvdraw.h"
 
 extern int agentBodyType;
 

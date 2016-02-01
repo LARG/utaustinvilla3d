@@ -1,11 +1,11 @@
 #ifndef BODY_MODEL_H
 #define BODY_MODEL_H
 
-#include "headers.h"
-#include "vecposition.h"
-#include "hctmatrix.h"
-#include "worldmodel.h"
-#include "ikfast/ikfast.h"
+#include "../headers/headers.h"
+#include "../math/vecposition.h"
+#include "../math/hctmatrix.h"
+#include "../worldmodel/worldmodel.h"
+#include "../ikfast/ikfast.h"
 
 #include <sstream>
 

@@ -5,7 +5,7 @@
 #include <string.h>       // needed for string
 #include <iostream>
 
-#include "headers.h"
+#include "../headers/headers.h"
 
 enum CoordSystemT {
     CARTESIAN = 0,

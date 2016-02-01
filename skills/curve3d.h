@@ -2,7 +2,7 @@
 #define CURVE3D_H
 
 #include <vector>
-#include "vecposition.h"
+#include "../math/vecposition.h"
 
 class Curve3D {
 public:

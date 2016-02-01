@@ -1,7 +1,7 @@
 #include "naobehavior.h"
 #include <list>
 #include <algorithm>
-#include "rvdraw.h"
+#include "../rvdraw/rvdraw.h"
 
 #include <sys/time.h>
 

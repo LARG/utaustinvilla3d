@@ -7,7 +7,7 @@ find_package(Threads REQUIRED)
 find_package(Boost COMPONENTS system REQUIRED)
 find_package(Rcssnet3d REQUIRED)
 
-set(CORE_PATH core_utwalk)
+set(CORE_PATH utwalk)
 
 include_directories(
 ${CORE_PATH}
@@ -40,32 +40,32 @@ set(CORE_FILES
 
 set(SRCS
   main.cc 
-  behavior.cc
-  naobehavior.cc
-  checkfall.cc 
-  primitives.cc
-  strategy.cc
-  parser.cc 
-  hctmatrix.cc
-  vecposition.cc
-  worldmodel.cc
-  bodymodel.cc
-  PFLocalization.cc
-  Particle.cc
-  Geometry.cc
-  skill.cc 
-  headers.cc
-  audio.cc 
-  pkbehaviors.cc
+  behaviors/behavior.cc
+  behaviors/naobehavior.cc
+  behaviors/checkfall.cc 
+  behaviors/kicking.cc 
+  behaviors/strategy.cc
+  behaviors/pkbehaviors.cc
+  servercomm/primitives.cc
+  parser/parser.cc 
+  math/hctmatrix.cc
+  math/vecposition.cc
+  math/Geometry.cc
+  worldmodel/worldmodel.cc
+  bodymodel/bodymodel.cc
+  particlefilter/PFLocalization.cc
+  particlefilter/Particle.cc
+  skills/skill.cc 
+  skills/curve3d.cc
   ikfast/ikfast.cpp
-  curve3d.cc
-  rvdraw.cc 
+  headers/headers.cc
+  audio/audio.cc 
+  rvdraw/rvdraw.cc 
   ${CORE_FILES}
-  BallKF.cpp
-  PlayerKF.cpp 
-  OrigKalmanFilter.cpp
-  kicking.cc 
-  optimizationbehaviors.cc
+  kalman/BallKF.cpp
+  kalman/PlayerKF.cpp 
+  kalman/OrigKalmanFilter.cpp
+  optimization/optimizationbehaviors.cc
 )
 
 add_executable(agentspark 
