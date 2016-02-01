@@ -3,7 +3,7 @@
 The following is some high level documentation about this codebase.  We hope to add more documentation in the future.
 
 ### General Process Flow 
-An agent receives information from the server which it processes in NaoBehavior::Think() after parsing the information in parser.cc.  Next an agent decides what to do in NaoBehavior::act() which typically involves selecting a skill (such as walking or a kick) to execute in NaoBehavior::selectSkill().  During the execution of a skill an agent determines new positions to move its joints to which are controlled by sending velocity commands (computed by PID controllers) to the server in servercomm/primitives.cc. 
+An agent receives information from the server which it processes in NaoBehavior::Think() after parsing the information in parser/parser.cc.  Next an agent decides what to do in NaoBehavior::act() which typically involves selecting a skill (such as walking or a kick) to execute in NaoBehavior::selectSkill().  During the execution of a skill an agent determines new positions to move its joints to which are controlled by sending velocity commands (computed by PID controllers) to the server in servercomm/primitives.cc. 
 
 
 ### World Model
@@ -11,7 +11,7 @@ Agents build a model of the world based on their observations in the worldmodel 
 
 
 ### Drawings in Roboviz 
-Agents can draw objects in the roboviz monitor (https://github.com/magmaOffenburg/RoboViz) by sending commands to roboviz's drawing port.  See the files in the rvdraw directory for commands to draw objects in roboviz, as well as example drawing commands in behaviors/strategy.cc and behaviors/naobehavior.cc.  By default the agent tries to connect to a version of roboviz running on the localhost, however it can connect to a remotely running instance of roboviz by using the command line option ```-mh <roboviz_host>``` to connect to an instance of roboviz running on a remote machine.
+Agents can draw objects in the roboviz monitor (https://github.com/magmaOffenburg/RoboViz) by sending commands to roboviz's drawing port.  See the files in the rvdraw directory for commands to draw objects in roboviz, as well as example drawing commands in behaviors/strategy.cc and behaviors/naobehavior.cc.  By default the agent tries to connect to a version of roboviz running on the localhost, however it can connect to a remotely running instance of roboviz by using the start script command line option ```-mh <roboviz_host>``` to connect to an instance of roboviz running on a remote machine.
 
 
 ### Skills 
