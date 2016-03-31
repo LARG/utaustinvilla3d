@@ -118,31 +118,31 @@ PFLocalization::PFLocalization(WorldModel* worldModel_, BodyModel* bodyModel_, M
     resetParticles();
 
     //	// middle line
-    //	(0,-10); (0,10)
+    //	(0,-HALF_FIELD_Y); (0,HALF_FIELD_Y)
     //
     //	// ground lines
-    //	(15,-10); (15,10)
-    //	(-15,-10); (-15,10)
+    //	(HALF_FIELD_X,-HALF_FIELD_Y); (HALF_FIELD_X,HALF_FIELD_Y)
+    //	(-HALF_FIELD_X,-HALF_FIELD_Y); (-HALF_FIELD_X,HALF_FIELD_Y)
     //
     //	// side lines
-    //	(15,10);(-15,10)
-    //	(15,-10);(-15,-10)
+    //	(HALF_FIELD_X,HALF_FIELD_Y);(-HALF_FIELD_X,HALF_FIELD_Y)
+    //	(HALF_FIELD_X,-HALF_FIELD_Y);(-HALF_FIELD_X,-HALF_FIELD_Y)
 
 
     //coordinates of actual lines
-    actualLines.push_back(SIM::Line2D(SIM::Point2D(-15, 10),SIM::Point2D(15, 10)));
-    actualLines.push_back(SIM::Line2D(SIM::Point2D(15, -10),SIM::Point2D(15, 10)));
-    actualLines.push_back(SIM::Line2D(SIM::Point2D(-15, -10),SIM::Point2D(15, -10)));
-    actualLines.push_back(SIM::Line2D(SIM::Point2D(-15, -10),SIM::Point2D(-15, 10)));
-    actualLines.push_back(SIM::Line2D(SIM::Point2D(0, -10),SIM::Point2D(0, 10)));
+    actualLines.push_back(SIM::Line2D(SIM::Point2D(-HALF_FIELD_X, HALF_FIELD_Y),SIM::Point2D(HALF_FIELD_X, HALF_FIELD_Y)));
+    actualLines.push_back(SIM::Line2D(SIM::Point2D(HALF_FIELD_X, -HALF_FIELD_Y),SIM::Point2D(HALF_FIELD_X, HALF_FIELD_Y)));
+    actualLines.push_back(SIM::Line2D(SIM::Point2D(-HALF_FIELD_X, -HALF_FIELD_Y),SIM::Point2D(HALF_FIELD_X, -HALF_FIELD_Y)));
+    actualLines.push_back(SIM::Line2D(SIM::Point2D(-HALF_FIELD_X, -HALF_FIELD_Y),SIM::Point2D(-HALF_FIELD_X, HALF_FIELD_Y)));
+    actualLines.push_back(SIM::Line2D(SIM::Point2D(0, -HALF_FIELD_Y),SIM::Point2D(0, HALF_FIELD_Y)));
 
 
-    actualLines.push_back(SIM::Line2D(SIM::Point2D(13.2,3),SIM::Point2D(13.2,-3)));
-    actualLines.push_back(SIM::Line2D(SIM::Point2D(13.2,3),SIM::Point2D(15,3)));
-    actualLines.push_back(SIM::Line2D(SIM::Point2D(13.2,-3),SIM::Point2D(15,-3)));
-    actualLines.push_back(SIM::Line2D(SIM::Point2D(-13.2,3),SIM::Point2D(-13.2,-3)));
-    actualLines.push_back(SIM::Line2D(SIM::Point2D(-13.2,3),SIM::Point2D(-15,3)));
-    actualLines.push_back(SIM::Line2D(SIM::Point2D(-13.2,-3),SIM::Point2D(-15,-3)));
+    actualLines.push_back(SIM::Line2D(SIM::Point2D(HALF_FIELD_X-PENALTY_X,PENALTY_Y/2.0),SIM::Point2D(HALF_FIELD_X-PENALTY_X,-PENALTY_Y/2.0)));
+    actualLines.push_back(SIM::Line2D(SIM::Point2D(HALF_FIELD_X-PENALTY_X,PENALTY_Y/2.0),SIM::Point2D(HALF_FIELD_X,PENALTY_Y/2.0)));
+    actualLines.push_back(SIM::Line2D(SIM::Point2D(HALF_FIELD_X-PENALTY_X,-PENALTY_Y/2.0),SIM::Point2D(HALF_FIELD_X,-PENALTY_Y/2.0)));
+    actualLines.push_back(SIM::Line2D(SIM::Point2D(-HALF_FIELD_X+PENALTY_X,PENALTY_Y/2.0),SIM::Point2D(-HALF_FIELD_X+PENALTY_X,-PENALTY_Y/2.0)));
+    actualLines.push_back(SIM::Line2D(SIM::Point2D(-HALF_FIELD_X+PENALTY_X,PENALTY_Y/2.0),SIM::Point2D(-HALF_FIELD_X,PENALTY_Y/2.0)));
+    actualLines.push_back(SIM::Line2D(SIM::Point2D(-HALF_FIELD_X+PENALTY_X,-PENALTY_Y/2.0),SIM::Point2D(-HALF_FIELD_X,-PENALTY_Y/2.0)));
 
     //		actualLines.push_back(SIM::Line2D(SIM::Point2D(2,0),SIM::Point2D(1.618033989, 1.175570505)));
     //		actualLines.push_back(SIM::Line2D(SIM::Point2D(1.618033989, 1.175570505),SIM::Point2D(0.618033989, 1.902113033)));
