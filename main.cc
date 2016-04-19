@@ -470,18 +470,26 @@ bool GetMessage(string& msg)
 void Run()
 {
     Behavior *behavior;
-    if( agentType == "naoagent" ) {
+    if (agentType == "naoagent") {
         behavior = new NaoBehavior(teamName, uNum, namedParams, rsg);
     }
-    else if ( agentType == "pkgoalie") {
+    else if (agentType == "pkgoalie") {
         behavior = new PKGoalieBehavior(teamName, uNum, namedParams, rsg);
     }
-    else if ( agentType == "pkshooter") {
+    else if (agentType == "pkshooter") {
         behavior = new PKShooterBehavior(teamName, uNum, namedParams, rsg);
     }
-    else if ("fixedKickAgent" == agentType) {
+    else if (agentType == "fixedKickAgent") {
         cerr << "creating OptimizationBehaviorFixedKick" << endl;
         behavior = new OptimizationBehaviorFixedKick(  teamName,
+                uNum,
+                namedParams,
+                rsg,
+                outputFile);
+    }
+    else if (agentType == "walkForwardAgent") {
+        cerr << "creating OptimizationBehaviorWalkForward" << endl;
+        behavior = new OptimizationBehaviorWalkForward(  teamName,
                 uNum,
                 namedParams,
                 rsg,

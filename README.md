@@ -16,7 +16,7 @@ This release is based off the UT Austin Villa RoboCup 3D simulation league team.
 * All necessary parsing code for sending/receiving messages from/to the server
 * Code for drawing objects in the roboviz monitor
 * Communication system previously provided for use in drop-in player challenges
-* An example behavior/task for optimizing a kick
+* Example behaviors/tasks for optimizing a kick and forward walk
 
 #### What is not included: 
 * The team's complete set of skills such as long kicks and goalie dives

@@ -34,5 +34,26 @@ public:
 
 };
 
+class OptimizationBehaviorWalkForward : public NaoBehavior {
+    const string outputFile;
+
+    int run;
+    double startTime;
+    bool beamChecked;
+    double INIT_WAIT;
+    double totalWalkDist;
+
+    void init();
+    bool checkBeam();
+
+public:
+
+    OptimizationBehaviorWalkForward(const std::string teamName, int uNum, const map<string, string>& namedParams_, const string& rsg_, const string& outputFile_);
+
+    virtual void beam( double& beamX, double& beamY, double& beamAngle );
+    virtual SkillType selectSkill();
+    virtual void updateFitness();
+
+};
 
 #endif

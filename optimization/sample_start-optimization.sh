@@ -1,12 +1,15 @@
 #!/bin/bash
 
+# Choose which optimization task to run
+task="kick" # "walk"
+
 # This script runs the simspark soccer simulator and an agent 
 
 # Set the agent and monitor port randomly, to allow for multiple agents per machine
 # Note: $RANDOM returns a value from 0 to 32767, ports <= 1024 are reserved for root 
 # TODO: Instead of picking random ports purposely bind to available ports
-export SPARK_SERVERPORT=$[$RANDOM + 1025]
-export SPARK_AGENTPORT=$[$RANDOM + 1025]
+export SPARK_SERVERPORT=$[$RANDOM + 1025] #3200
+export SPARK_AGENTPORT=$[$RANDOM + 1025] #3100
 
 echo -n "It is: "
 date
@@ -31,7 +34,20 @@ OUTPUT_FILE=$DIR_OUTPUT/$(basename $3)
 # TODO: temporary fix!! get rid of it - because relative path dependency of skills
 cd $DIR_SCRIPT/..
 export LD_LIBRARY_PATH=./libs:$LD_LIBRARY_PATH
-$DIR_SCRIPT/../agentspark --unum 2 --type $TYPE --paramsfile $DIR_SCRIPT/../paramfiles/defaultParams.txt --paramsfile $DIR_SCRIPT/../paramfiles/defaultParams_t$TYPE.txt --paramsfile $PARAMS_FILE --experimentout $OUTPUT_FILE --optimize fixedKickAgent --port $SPARK_AGENTPORT --mport $SPARK_SERVERPORT & 
+
+
+
+if [ $task == "kick" ]
+then
+    # FixedKick optimization task 
+    $DIR_SCRIPT/../agentspark --unum 2 --type $TYPE --paramsfile $DIR_SCRIPT/../paramfiles/defaultParams.txt --paramsfile $DIR_SCRIPT/../paramfiles/defaultParams_t$TYPE.txt --paramsfile $PARAMS_FILE --experimentout $OUTPUT_FILE --optimize fixedKickAgent --port $SPARK_AGENTPORT --mport $SPARK_SERVERPORT & 
+fi
+
+if [ $task == "walk" ]
+then
+# WalkForward optimization task
+$DIR_SCRIPT/../agentspark --unum 2 --type $TYPE --paramsfile $DIR_SCRIPT/../paramfiles/defaultParams.txt --paramsfile $DIR_SCRIPT/../paramfiles/defaultParams_t$TYPE.txt --paramsfile $PARAMS_FILE --experimentout $OUTPUT_FILE --optimize walkForwardAgent --port $SPARK_AGENTPORT --mport $SPARK_SERVERPORT &
+fi
 
 AGENTPID=$!
 sleep 3
