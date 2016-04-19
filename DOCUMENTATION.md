@@ -64,7 +64,7 @@ In Xiaoping Chen, Peter Stone, Luis Enrique Sucar, and Tijn Van der Zant, editor
 
 
 ### Penalty Kick Behaviors 
-Behaviors executed during penalty kicks are in *behaviors/pkbehaviors.\**.  Penalty kick kickers and goalies can be started with the *start_penalty_kicker.sh* and *start_penalty_goalie.sh* start scripts.
+Behaviors executed during penalty kicks are in *behaviors/pkbehaviors.\* *.  Penalty kick kickers and goalies can be started with the *start_penalty_kicker.sh* and *start_penalty_goalie.sh* start scripts.
 
 
 ### Optimization 
