@@ -70,7 +70,7 @@ See *DOCUMENTATION* for some high level documentation about the codebase.
 See the methods in `selectSkill()` in *behaviors/strategy.cc* for demo behaviors.
 
 
-###Optimization task example:
+###Optimization task examples:
 See the *optimization* directory.
 
 
