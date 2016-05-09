@@ -29,12 +29,18 @@ This release is based off the UT Austin Villa RoboCup 3D simulation league team.
 * Boost library
 * Threads library
 
+Instructions for installing simspark and rcssserver3d:
+http://simspark.sourceforge.net/wiki/index.php/Installation_on_Linux
+
+It's optional (recommended) to install the roboviz monitor:
+https://github.com/magmaOffenburg/RoboViz
+
 
 ### To build:
 ```bash
 cmake . 
 ```
- (If cmake can't find RCSSNET3D set the SPARK_DIR environmental variable to the path where you installed the server and then rerun cmake)
+ (If cmake can't find RCSSNET3D set the SPARK_DIR environmental variable to the path where you installed the server and then rerun cmake.  Also, if you installed rcssserver3d from a package instead of building it from source, you might need to install the rcssserver3d-dev package.)
  
 ```bash
 make
