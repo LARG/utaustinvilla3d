@@ -7,6 +7,15 @@ find_package(Threads REQUIRED)
 find_package(Boost COMPONENTS system REQUIRED)
 find_package(Rcssnet3d REQUIRED)
 
+if(NOT CMAKE_BUILD_TYPE)
+  message(STATUS "No build type selected, default to Release")
+  set (CMAKE_BUILD_TYPE Release)
+endif(NOT CMAKE_BUILD_TYPE)
+
+if(NOT CMAKE_CXX_FLAGS)
+  set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-unused")
+endif(NOT CMAKE_CXX_FLAGS)
+
 set(CORE_PATH utwalk)
 
 include_directories(
