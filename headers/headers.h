@@ -245,14 +245,16 @@ const double EPSILON = 0.0001;
 #define PM_GAME_OVER       8
 
 //Extra added.
-#define PM_CORNER_KICK_LEFT   9
-#define PM_CORNER_KICK_RIGHT  10
-#define PM_GOAL_KICK_LEFT     11
-#define PM_GOAL_KICK_RIGHT    12
-#define PM_OFFSIDE_LEFT       13
-#define PM_OFFSIDE_RIGHT      14
-#define PM_FREE_KICK_LEFT     15
-#define PM_FREE_KICK_RIGHT    16
+#define PM_CORNER_KICK_LEFT       9
+#define PM_CORNER_KICK_RIGHT      10
+#define PM_GOAL_KICK_LEFT         11
+#define PM_GOAL_KICK_RIGHT        12
+#define PM_OFFSIDE_LEFT           13
+#define PM_OFFSIDE_RIGHT          14
+#define PM_FREE_KICK_LEFT         15
+#define PM_FREE_KICK_RIGHT        16
+#define PM_DIRECT_FREE_KICK_LEFT  17
+#define PM_DIRECT_FREE_KICK_RIGHT 18
 
 //Directions
 #define DIR_LEFT  0
