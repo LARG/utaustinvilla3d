@@ -811,7 +811,7 @@ SkillType NaoBehavior::getWalk(WalkRequestBlock::ParamSet paramSet, const double
     static WalkRequestBlock::ParamSet lastWalkParamSet = WalkRequestBlock::PARAMS_DEFAULT;
     static bool fLastWalkParamRequestWasApproach = false;
     static double lastWalkParamRequestApproachTime = 999999999;
-    bool fBalance = false;
+    bool fStabilize = false;
     if (paramSet == WalkRequestBlock::PARAMS_APPROACH_BALL) {
         if (!fLastWalkParamRequestWasApproach) {
             lastWalkParamRequestApproachTime = worldModel->getTime();
@@ -821,7 +821,7 @@ SkillType NaoBehavior::getWalk(WalkRequestBlock::ParamSet paramSet, const double
         if (lastWalkParamSet != WalkRequestBlock::PARAMS_APPROACH_BALL && (speed < .5 || abs(direction) > 45)) {
             if (worldModel->getTime()-lastWalkParamRequestApproachTime < .5) {
                 paramSet = WalkRequestBlock::PARAMS_DEFAULT;
-                fBalance = true;
+                fStabilize = true;
                 relSpeed, relRot = 0;
             }
         }
@@ -848,7 +848,7 @@ SkillType NaoBehavior::getWalk(WalkRequestBlock::ParamSet paramSet, const double
     // SKILL_WALK_OMNI is invoked.
     velocity = WalkVelocity(paramSet, relSpeed * relSpeedX, relSpeed * relSpeedY, relRot);
 
-    if (fBalance) {
+    if (fStabilize) {
         // Stabilize
         return SKILL_STAND;
     }

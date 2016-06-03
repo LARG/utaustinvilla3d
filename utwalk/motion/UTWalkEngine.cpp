@@ -10,7 +10,6 @@ UTWalkEngine::UTWalkEngine()
     paramSets[WalkRequestBlock::PARAMS_DEFAULT] = WalkEngineParameters();
     paramSets[WalkRequestBlock::PARAMS_POSITIONING] = WalkEngineParameters("pos_");
     paramSets[WalkRequestBlock::PARAMS_APPROACH_BALL] = WalkEngineParameters("app_");
-
 }
 
 UTWalkEngine::~UTWalkEngine() {
