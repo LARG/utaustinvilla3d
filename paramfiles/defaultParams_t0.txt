@@ -126,7 +126,7 @@ kick_gen_approach_navBallDist	0.5
 kick_gen_approach_navBallCollision	0.333
 //kick_gen_approach_navBallAngle	37.67637845256782
 kick_gen_approach_navBallAngle	20.0
-kick_gen_approach_maxDecelX	0.49481424438762717
+kick_gen_approach_maxDecelX	0.75
 kick_gen_approach_maxDecelY	0.8861122500586298
 
 
