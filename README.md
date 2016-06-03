@@ -20,7 +20,7 @@ This release is based off the UT Austin Villa RoboCup 3D simulation league team.
 
 #### What is not included: 
 * The team's complete set of skills such as long kicks and goalie dives
-* Optimized parameters for behaviors such as walking (slow and stable walk engine parameters are included)
+* Optimized parameters for behaviors such as the team's fastest walks (slow and stable walk engine parameters are included, as well as optimized walk engine parameters for positioning/dribbling and approaching the ball to kick)
 * High level strategy including formations and role assignment
 
 
@@ -90,7 +90,7 @@ See the *optimization* directory.
 If you use this code for research purposes, please consider citing one or more research papers listed at the above link which includes the following topics and papers:
 ##### Walk Engine 
 Patrick MacAlpine, Samuel Barrett, Daniel Urieli, Victor Vu, and Peter Stone. 
-Design and Optimization of an Omnidirectional Humanoid Walk:A Winning Approach at the RoboCup 2011 3D Simulation Competition. 
+Design and Optimization of an Omnidirectional Humanoid Walk: A Winning Approach at the RoboCup 2011 3D Simulation Competition. 
 In Proceedings of the Twenty-Sixth AAAI Conference on Artificial Intelligence (AAAI), July 2012.
 (http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-AAAI12-MacAlpine.html)
 

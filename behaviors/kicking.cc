@@ -28,6 +28,12 @@ SkillType NaoBehavior::kickBall(const int kickTypeToUse, const VecPosition &targ
 
     kickType = kickTypeToUse;
 
+    if (me.getDistanceTo(ball) > 1) {
+        // Far away from the ball so walk toward target offset from the ball
+        VecPosition approachBallTarget = ball - kickDirection*atof(namedParams.find("drib_target")->second.c_str());
+        return goToTarget(approachBallTarget);
+    }
+
     return kickBallAtPresetTarget();
 }
 
@@ -158,7 +164,13 @@ SkillType NaoBehavior::kickBallAtPresetTarget() {
         VecPosition localTarget = worldModel->g2l(target);
         SIM::AngDeg localTargetAngle = atan2Deg(localTarget.getY(), localTarget.getX());
         //cout << "CIRCLE\t" << worldModel->getGameTime() << "\n";
-        return goToTargetRelative(localTarget, turnAngle, 1.0, false /*fAllowOver180Turn*/);
+        /*
+            if (me.getDistanceTo(ball) < me.getDistanceTo(originalTarget)) {
+                // Walk facing to local target instead of ball if desired
+                return goToTargetRelative(localTarget, localTargetAngle, 1.0, false, WalkRequestBlock::PARAMS_POSITIONING);
+            }
+        */
+        return goToTargetRelative(localTarget, turnAngle, 1.0, false /*fAllowOver180Turn*/, WalkRequestBlock::PARAMS_POSITIONING);
     }
 }
 
@@ -307,7 +319,7 @@ SkillType NaoBehavior::kickBallAtTargetSimplePositioning(const VecPosition &targ
     }
     desiredVel = hypot(velX, velY);
     walkSpeed = desiredVel > estimatedVelocity.getMagnitude() ? desiredVel / hypot(MAX_VELOCITY_X, MAX_VELOCITY_Y) : 0; // TODO Really need to know what walkSpeed the walk engine is currently trying to achieve so we can overshoot by enough to get the desiredVel
-    return getWalk(walkDirection, walkRotation, walkSpeed);
+    return getWalk(WalkRequestBlock::PARAMS_APPROACH_BALL, walkDirection, walkRotation, walkSpeed);
 }
 
 

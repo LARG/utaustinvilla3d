@@ -735,9 +735,10 @@ SkillType NaoBehavior::getWalk(WalkRequestBlock::ParamSet paramSet, const double
 {
     double reqDirection, relSpeed;
 
-
-
-
+    if (worldModel->getTime()-lastGetupRecoveryTime < 1.0 && abs(direction) > 90) {
+        // Don't try and walk backwards if we just got up as we are probably unstable
+        speed = 0;
+    }
 
     // Convert direction angle to the range [0, 360)
     reqDirection = fmod(direction, 360.0);
@@ -805,6 +806,33 @@ SkillType NaoBehavior::getWalk(WalkRequestBlock::ParamSet paramSet, const double
     if ((reqDirection > 90) && (reqDirection < 270))
         relSpeedX *= -1;
 
+    // Abrubt stops or changes in direction can be unstable with the approach
+    // ball walk parameter set so check for this and stabilize if need be
+    static WalkRequestBlock::ParamSet lastWalkParamSet = WalkRequestBlock::PARAMS_DEFAULT;
+    static bool fLastWalkParamRequestWasApproach = false;
+    static double lastWalkParamRequestApproachTime = 999999999;
+    bool fBalance = false;
+    if (paramSet == WalkRequestBlock::PARAMS_APPROACH_BALL) {
+        if (!fLastWalkParamRequestWasApproach) {
+            lastWalkParamRequestApproachTime = worldModel->getTime();
+        }
+        fLastWalkParamRequestWasApproach = true;
+
+        if (lastWalkParamSet != WalkRequestBlock::PARAMS_APPROACH_BALL && (speed < .5 || abs(direction) > 45)) {
+            if (worldModel->getTime()-lastWalkParamRequestApproachTime < .5) {
+                paramSet = WalkRequestBlock::PARAMS_DEFAULT;
+                fBalance = true;
+                relSpeed, relRot = 0;
+            }
+        }
+    } else {
+        fLastWalkParamRequestWasApproach = false;
+    }
+
+    if (lastWalkParamSet != paramSet) {
+        lastWalkParamSet = paramSet;
+    }
+
 
     // Sanity checks. The absolute value of these variables must be <= 1.
     // However, because of floating point error, it's possible that they are
@@ -819,6 +847,12 @@ SkillType NaoBehavior::getWalk(WalkRequestBlock::ParamSet paramSet, const double
     // generate a request to the omnidirectional walk engine whenever the
     // SKILL_WALK_OMNI is invoked.
     velocity = WalkVelocity(paramSet, relSpeed * relSpeedX, relSpeed * relSpeedY, relRot);
+
+    if (fBalance) {
+        // Stabilize
+        return SKILL_STAND;
+    }
+
     return SKILL_WALK_OMNI;
 }
 

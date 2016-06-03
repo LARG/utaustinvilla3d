@@ -15,7 +15,9 @@ public:
 
     enum ParamSet {
         PARAMS_NONE,
-        PARAMS_DEFAULT
+        PARAMS_DEFAULT,
+        PARAMS_POSITIONING,
+        PARAMS_APPROACH_BALL
     };
 
     WalkRequestBlock():

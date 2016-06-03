@@ -4,6 +4,7 @@
 ### UT WALK PARAMETERS ###
 ##########################
 
+##<--Walk parameters for going to a target-->##
 // Maximum size of steps in radians and millimeters 
 utwalk_max_step_size_angle	1.22
 utwalk_max_step_size_x	50
@@ -67,6 +68,83 @@ utwalk_ankle_const_offset	0
 utwalk_ankle_amplitude	  0
 utwalk_ankle_phase_offset	0
 
+##<--Walk parameters for positioning/dribbling-->##
+pos_utwalk_max_step_size_angle	1.22
+pos_utwalk_max_step_size_x	50
+pos_utwalk_max_step_size_y	40
+pos_utwalk_shift_amount	20
+pos_utwalk_walk_height	175
+pos_utwalk_step_height	20
+pos_utwalk_fraction_still	0.2
+pos_utwalk_fraction_on_ground	0.2
+pos_utwalk_fraction_moving	0.6
+pos_utwalk_fraction_in_air	0.6
+pos_utwalk_phase_length	0.38
+pos_utwalk_default_com_pos_x	0.0
+pos_utwalk_pid_step_size_x	0.03
+pos_utwalk_pid_step_size_y	0.03
+pos_utwalk_pid_step_size_rot	0.03
+pos_utwalk_max_normal_com_error	7.5
+pos_utwalk_max_acceptable_com_error	12.5
+pos_utwalk_fwd_offset	2.5
+pos_utwalk_fwd_offset_factor	0.5
+pos_utwalk_swing_ankle_offset	-0.087266463
+pos_utwalk_pid_tilt	0.15
+pos_utwalk_pid_roll	0.2
+pos_utwalk_pid_com_x	1.0
+pos_utwalk_pid_com_y	1.0
+pos_utwalk_pid_com_z	0.0
+pos_utwalk_pid_arm_x	0.0
+pos_utwalk_pid_arm_y	0.0
+pos_utwalk_balance_hip_pitch	0
+pos_utwalk_balance_knee_pitch	0
+pos_utwalk_balance_hip_roll		0
+pos_utwalk_balance_ankle_roll	0
+pos_utwalk_toe_const_offset	  0
+pos_utwalk_toe_amplitude	  0
+pos_utwalk_toe_phase_offset	  0
+pos_utwalk_ankle_const_offset	0
+pos_utwalk_ankle_amplitude	  0
+pos_utwalk_ankle_phase_offset	0
+
+##<--Walk parameters for approaching the ball to kick-->##
+app_utwalk_max_step_size_angle	1.22
+app_utwalk_max_step_size_x	50
+app_utwalk_max_step_size_y	40
+app_utwalk_shift_amount	20
+app_utwalk_walk_height	175
+app_utwalk_step_height	20
+app_utwalk_fraction_still	0.2
+app_utwalk_fraction_on_ground	0.2
+app_utwalk_fraction_moving	0.6
+app_utwalk_fraction_in_air	0.6
+app_utwalk_phase_length	0.38
+app_utwalk_default_com_pos_x	0.0
+app_utwalk_pid_step_size_x	0.03
+app_utwalk_pid_step_size_y	0.03
+app_utwalk_pid_step_size_rot	0.03
+app_utwalk_max_normal_com_error	7.5
+app_utwalk_max_acceptable_com_error	12.5
+app_utwalk_fwd_offset	2.5
+app_utwalk_fwd_offset_factor	0.5
+app_utwalk_swing_ankle_offset	-0.087266463
+app_utwalk_pid_tilt	0.15
+app_utwalk_pid_roll	0.2
+app_utwalk_pid_com_x	1.0
+app_utwalk_pid_com_y	1.0
+app_utwalk_pid_com_z	0.0
+app_utwalk_pid_arm_x	0.0
+app_utwalk_pid_arm_y	0.0
+app_utwalk_balance_hip_pitch	0
+app_utwalk_balance_knee_pitch	0
+app_utwalk_balance_hip_roll		0
+app_utwalk_balance_ankle_roll	0
+app_utwalk_toe_const_offset	  0
+app_utwalk_toe_amplitude	  0
+app_utwalk_toe_phase_offset	  0
+app_utwalk_ankle_const_offset	0
+app_utwalk_ankle_amplitude	  0
+app_utwalk_ankle_phase_offset	0
 
 
 ########################
@@ -196,8 +274,6 @@ kick_ik_0_max_displacement_bottom	0.025
 kick_ik_0_cw_angle_thresh	2
 kick_ik_0_ccw_angle_thresh	2
 kick_ik_0_angle			0
-
-
 
 
 // Parameters for approaching the ball

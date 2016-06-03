@@ -23,10 +23,10 @@ Values for skills and other configurable variables can be read in and loaded at 
 
 
 ### Walk Engine 
-Agents use a double inverted pendulum omnidirectional walk engine to move.  Code for the walk engine can be found in the *utwalk* directory.  To move to a target location on the field agents can use `NaoBehavior::goToTarget()` or, to specify an exact direction, rotation, and speed to the walk engine,  `NaoBehavior::getWalk()` can be used.  Parameters that control the walk engine are contained in parameter files, and a default set of walk engine parameters that provide a slow and stable walk are included in this release.  More information about the walk engine, as well as the process UT Austin Villa used to optimize parameters for the walk engine, can be found in the following paper:
+Agents use a double inverted pendulum omnidirectional walk engine to move.  Code for the walk engine can be found in the *utwalk* directory.  To move to a target location on the field agents can use `NaoBehavior::goToTarget()` or, to specify an exact direction, rotation, and speed to the walk engine,  `NaoBehavior::getWalk()` can be used.  Parameters that control the walk engine are contained in parameter files, and a default set of walk engine parameters that provide a slow and stable walk, as well as optimized walk engine parameters for positioning/dribbling and approaching the ball to kick, are included in this release.  More information about the walk engine, as well as the process UT Austin Villa used to optimize parameters for the walk engine, can be found in the following paper:
 
 Patrick MacAlpine, Samuel Barrett, Daniel Urieli, Victor Vu, and Peter Stone.
-Design and Optimization of an Omnidirectional Humanoid Walk:A Winning Approach at the RoboCup 2011 3D Simulation Competition. 
+Design and Optimization of an Omnidirectional Humanoid Walk: A Winning Approach at the RoboCup 2011 3D Simulation Competition. 
 In Proceedings of the Twenty-Sixth AAAI Conference on Artificial Intelligence (AAAI), July 2012.
 (http://www.cs.utexas.edu/~AustinVilla/sim/3dsimulation/AustinVilla3DSimulationFiles/2011/html/walk.html)
 

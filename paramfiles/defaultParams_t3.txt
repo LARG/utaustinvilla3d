@@ -1,11 +1,5 @@
 ### Default parameters loaded for all type 3 agents ###
 
-
-
-
-
-
-
 ########################
 ### GETUP PARAMETERS ###
 ########################
@@ -76,5 +70,137 @@ kick_scale2	1.9954055020031927
 kick_scale3	-7.5688666112202645
 
 
+#################################
+### OPTIMIZED WALK PARAMETERS ###
+#################################
+
+##<--Walk parameters for going to a target-->##
+/*
+These values are not UT Austin Villa's regular walking to target parameters,
+instead the team's parameters for positioning and dribbling are used as a 
+placeholder.  See the following paper for how these parameters were optimized: 
+---
+Design and Optimization of an Omnidirectional Humanoid Walk: A Winning Approach at the RoboCup 2011 3D Simulation Competition. 
+Patrick MacAlpine, Samuel Barrett, Daniel Urieli, Victor Vu, and Peter Stone.
+In Proceedings of the Twenty-Sixth AAAI Conference on Artificial Intelligence (AAAI), July 2012.
+---
+*/
+utwalk_max_step_size_angle	0.8813862859288328
+utwalk_max_step_size_x	107.3345416433581
+utwalk_max_step_size_y	50.16358799467425
+utwalk_shift_amount	-9.645515001040701
+utwalk_walk_height	147.687903533537
+utwalk_step_height	74.16613093090523
+utwalk_fraction_still	0.3530937822787453
+utwalk_fraction_on_ground	-0.09283692479214165
+utwalk_phase_length	0.062418067271895444
+utwalk_default_com_pos_x	-41.23365401620529
+utwalk_pid_step_size_x	0.016096422722122177
+utwalk_pid_step_size_y	0.056713579216171206
+utwalk_pid_step_size_rot	0.08683126580923822
+utwalk_max_normal_com_error	13.88734219175688
+utwalk_max_acceptable_com_error	97.61803550155396
+utwalk_fwd_offset	2.138608744683571
+utwalk_fwd_offset_factor	0.8920279682132857
+utwalk_fraction_moving	0.6833323202812207
+utwalk_fraction_in_air	1.2966717859105423
+utwalk_swing_ankle_offset	-0.011257119451918965
+utwalk_pid_tilt	0.1911495121542667
+utwalk_pid_roll	-0.32542799483520296
+utwalk_pid_com_x	1.3181352799362462
+utwalk_pid_com_y	0.6439683323811424
+utwalk_pid_com_z	0.10946655507451812
+utwalk_pid_arm_x	-0.04252457434628208
+utwalk_pid_arm_y	0.19398407014957578
+
+##<--Walk parameters for positioning/dribbling-->##
+/*
+See the following paper for how these parameters were optimized: 
+---
+Design and Optimization of an Omnidirectional Humanoid Walk: A Winning Approach at the RoboCup 2011 3D Simulation Competition. 
+Patrick MacAlpine, Samuel Barrett, Daniel Urieli, Victor Vu, and Peter Stone.
+In Proceedings of the Twenty-Sixth AAAI Conference on Artificial Intelligence (AAAI), July 2012.
+---
+*/
+pos_utwalk_max_step_size_angle	0.8813862859288328
+pos_utwalk_max_step_size_x	107.3345416433581
+pos_utwalk_max_step_size_y	50.16358799467425
+pos_utwalk_shift_amount	-9.645515001040701
+pos_utwalk_walk_height	147.687903533537
+pos_utwalk_step_height	74.16613093090523
+pos_utwalk_fraction_still	0.3530937822787453
+pos_utwalk_fraction_on_ground	-0.09283692479214165
+pos_utwalk_phase_length	0.062418067271895444
+pos_utwalk_default_com_pos_x	-41.23365401620529
+pos_utwalk_pid_step_size_x	0.016096422722122177
+pos_utwalk_pid_step_size_y	0.056713579216171206
+pos_utwalk_pid_step_size_rot	0.08683126580923822
+pos_utwalk_max_normal_com_error	13.88734219175688
+pos_utwalk_max_acceptable_com_error	97.61803550155396
+pos_utwalk_fwd_offset	2.138608744683571
+pos_utwalk_fwd_offset_factor	0.8920279682132857
+pos_utwalk_fraction_moving	0.6833323202812207
+pos_utwalk_fraction_in_air	1.2966717859105423
+pos_utwalk_swing_ankle_offset	-0.011257119451918965
+pos_utwalk_pid_tilt	0.1911495121542667
+pos_utwalk_pid_roll	-0.32542799483520296
+pos_utwalk_pid_com_x	1.3181352799362462
+pos_utwalk_pid_com_y	0.6439683323811424
+pos_utwalk_pid_com_z	0.10946655507451812
+pos_utwalk_pid_arm_x	-0.04252457434628208
+pos_utwalk_pid_arm_y	0.19398407014957578
+
+##<--Walk parameters for approaching the ball to kick-->##
+/*
+See the following paper for how these parameters were optimized: 
+---
+UT Austin Villa: RoboCup 2014 3D Simulation League Competition and Technical Challenge Champions.
+Patrick MacAlpine, Mike Depinet, Jason Liang, and Peter Stone.
+In RoboCup-2014: Robot Soccer World Cup XVIII, Lecture Notes in Artificial Intelligence, Springer Verlag, Berlin, 2015.
+---
+*/
+app_utwalk_max_step_size_angle	1.5658540891438208
+app_utwalk_max_step_size_x	85.62354786632908
+app_utwalk_max_step_size_y	66.55493597447787
+app_utwalk_shift_amount	-25.717092988455377
+app_utwalk_walk_height	155.97699610626586
+app_utwalk_step_height	71.91317764128446
+app_utwalk_fraction_still	0.5921224357178227
+app_utwalk_fraction_on_ground	0.08241881050163216
+app_utwalk_phase_length	0.043490336499228746
+app_utwalk_default_com_pos_x	-58.004414037674955
+app_utwalk_pid_step_size_x	0.06898186727176964
+app_utwalk_pid_step_size_y	0.09350623780104678
+app_utwalk_pid_step_size_rot	0.09450837962573518
+app_utwalk_max_normal_com_error	31.260652541852693
+app_utwalk_max_acceptable_com_error	122.96900979391759
+app_utwalk_fwd_offset	2.230735167695816
+app_utwalk_fwd_offset_factor	0.9254865876701823
+app_utwalk_fraction_moving	0.8705953612631807
+app_utwalk_fraction_in_air	1.3892580307682738
+app_utwalk_swing_ankle_offset	0.08832347939917858
+app_utwalk_pid_tilt	0.3048680146143837
+app_utwalk_pid_roll	-0.3219664122442003
+app_utwalk_pid_com_x	1.435720452879604
+app_utwalk_pid_com_y	0.6129731132169935
+app_utwalk_pid_com_z	0.03352964983107902
+app_utwalk_pid_arm_x	-0.10375221628374033
+app_utwalk_pid_arm_y	0.23826286396901017
 
 
+// Parameters for approaching the ball
+kick_gen_approach_turnDist	0.40892318003760225
+kick_gen_approach_buff	0.02885478659767846
+kick_gen_approach_estVelCorrection	0.09694944837908366
+kick_gen_approach_navBallDist	0.5
+kick_gen_approach_navBallCollision	0.333
+//kick_gen_approach_navBallAngle	40.53921368439362
+kick_gen_approach_navBallAngle	20.0
+//kick_gen_approach_maxDecelX	0.6496963869244626
+kick_gen_approach_maxDecelX	1.0
+kick_gen_approach_maxDecelY	1.5491744047740306
+
+
+// Parameters for dribbling
+drib_coll_thresh				0.33582030312352373
+drib_target					0.17785682250297227
