@@ -65,7 +65,76 @@ SkillType NaoBehavior::selectSkill() {
     //return kickBall(KICK_IK, VecPosition(HALF_FIELD_X, 0, 0)); // IK kick
 
     // Just stand in place
-    return SKILL_STAND;
+    //return SKILL_STAND;
+
+    // Demo behavior where players form a rotating circle and kick the ball
+    // back and forth
+    return demoKickingCircle();
+}
+
+
+/*
+ * Demo behavior where players form a rotating circle and kick the ball
+ * back and forth
+ */
+SkillType NaoBehavior::demoKickingCircle() {
+    // Parameters for circle
+    VecPosition center = VecPosition(-HALF_FIELD_X/2.0, 0, 0);
+    double circleRadius = 5.0;
+    double rotateRate = 2.5;
+
+    // Find closest player to ball
+    int playerClosestToBall = -1;
+    double closestDistanceToBall = 10000;
+    for(int i = WO_TEAMMATE1; i < WO_TEAMMATE1+NUM_AGENTS; ++i) {
+        VecPosition temp;
+        int playerNum = i - WO_TEAMMATE1 + 1;
+        if (worldModel->getUNum() == playerNum) {
+            // This is us
+            temp = worldModel->getMyPosition();
+        } else {
+            WorldObject* teammate = worldModel->getWorldObject( i );
+            if (teammate->validPosition) {
+                temp = teammate->pos;
+            } else {
+                continue;
+            }
+        }
+        temp.setZ(0);
+
+        double distanceToBall = temp.getDistanceTo(ball);
+        if (distanceToBall < closestDistanceToBall) {
+            playerClosestToBall = playerNum;
+            closestDistanceToBall = distanceToBall;
+        }
+    }
+
+    if (playerClosestToBall == worldModel->getUNum()) {
+        // Have closest player kick the ball toward the center
+        return kickBall(KICK_FORWARD, center);
+    } else {
+        // Move to circle position around center and face the center
+        VecPosition localCenter = worldModel->g2l(center);
+        SIM::AngDeg localCenterAngle = atan2Deg(localCenter.getY(), localCenter.getX());
+
+        // Our desired target position on the circle
+        // Compute target based on uniform number, rotate rate, and time
+        VecPosition target = center + VecPosition(circleRadius,0,0).rotateAboutZ(360.0/(NUM_AGENTS-1)*(worldModel->getUNum()-(worldModel->getUNum() > playerClosestToBall ? 1 : 0)) + worldModel->getTime()*rotateRate);
+
+        // Adjust target to not be too close to teammates or the ball
+        target = collisionAvoidance(true /*teammate*/, false/*opponent*/, true/*ball*/, 1/*proximity thresh*/, .5/*collision thresh*/, target, true/*keepDistance*/);
+
+        if (me.getDistanceTo(target) < .25 && abs(localCenterAngle) <= 10) {
+            // Close enough to desired position and orientation so just stand
+            return SKILL_STAND;
+        } else if (me.getDistanceTo(target) < .5) {
+            // Close to desired position so start turning to face center
+            return goToTargetRelative(worldModel->g2l(target), localCenterAngle);
+        } else {
+            // Move toward target location
+            return goToTarget(target);
+        }
+    }
 }
 
 

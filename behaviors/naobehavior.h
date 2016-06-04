@@ -220,6 +220,8 @@ protected:
     double getStdNameParameter(const SkillType kick_skill, const std::string& parameter);
     void getSkillsForKickType(int kickType, SkillType skillsForType[]);
 
+    SkillType demoKickingCircle();
+
 public:
 
     NaoBehavior(const std::string teamName, int uNum, const map<string, string>& namedParams_, const string& rsg_);
