@@ -55,6 +55,7 @@ set(SRCS
   behaviors/kicking.cc 
   behaviors/strategy.cc
   behaviors/pkbehaviors.cc
+  behaviors/gazebobehavior.cc
   servercomm/primitives.cc
   parser/parser.cc 
   math/hctmatrix.cc

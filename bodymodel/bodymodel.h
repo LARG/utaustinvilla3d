@@ -374,6 +374,7 @@ public:
     bool setInitialLeg(const int &leg);
 
     bool hasToe();
+    bool isGazebo();
 
 protected:
     void filterOutOfBounds(const int &legIndex, vector<joints_t> &solutions) const;

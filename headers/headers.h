@@ -288,6 +288,8 @@ enum SkillType {
 // Number of agents on the team
 #define NUM_AGENTS 11
 
+#define GAZEBO_AGENT_TYPE -1
+
 
 template<typename T>
 std::ostream& operator<<(std::ostream& out, const std::vector<T>& t) {

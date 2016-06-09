@@ -17,6 +17,7 @@ This release is based off the UT Austin Villa RoboCup 3D simulation league team.
 * Code for drawing objects in the roboviz monitor
 * Communication system previously provided for use in drop-in player challenges
 * Example behaviors/tasks for optimizing a kick and forward walk
+* Support for Gazebo RoboCup 3D simulation plugin (https://bitbucket.org/osrf/robocup3ds)
 
 #### What is not included: 
 * The team's complete set of skills such as long kicks and goalie dives
@@ -58,6 +59,10 @@ Run penalty kick shooter:
 Run penalty kick goalie:
 ```bash
 ./start_penalty_goalie.sh <host>
+```
+Run agent for Gazebo RoboCup 3D simulation plugin:
+```bash
+./start_gazebo.sh <host>
 ```
 Kill team:
 ```bash

@@ -1,0 +1,2 @@
+### Default parameters loaded for all gazebo agents ###
+

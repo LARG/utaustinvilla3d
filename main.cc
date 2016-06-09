@@ -11,6 +11,7 @@
 #include "behaviors/naobehavior.h"
 #include "optimization/optimizationbehaviors.h"
 #include "behaviors/pkbehaviors.h"
+#include "behaviors/gazebobehavior.h"
 
 using namespace rcss::net;
 using namespace std;
@@ -62,6 +63,7 @@ void PrintHelp()
     cout << " --paramsfile <filename>\tname of a parameters file to be loaded" << endl;
     cout << " --pkgoalie\tgoalie for penalty kick shootout" << endl;
     cout << " --pkshooter\tshooter for penalty kick shootout" << endl;
+    cout << " --gazebo\tagent for Gazebo RoboCup 3D simulation plugin" << endl;
     cout << " --optimize <agent-type>\toptimization agent type" << endl;
     cout << " --mhost=<IP>\tIP of the monitor for sending draw commands" << endl;
     cout << " --mport <port>\tport of the monitor for training command parser" << endl;
@@ -237,6 +239,9 @@ void ReadOptions(int argc, char* argv[])
         }
         else if (strcmp(argv[i], "--pkshooter") == 0) {
             agentType = "pkshooter";
+        }
+	else if (strcmp(argv[i], "--gazebo") == 0) {
+            agentType = "gazebo";
         }
     } // for-loop
 }
@@ -478,6 +483,10 @@ void Run()
     }
     else if (agentType == "pkshooter") {
         behavior = new PKShooterBehavior(teamName, uNum, namedParams, rsg);
+    }
+    else if (agentType == "gazebo") {
+      agentBodyType = GAZEBO_AGENT_TYPE;
+        behavior = new GazeboBehavior(teamName, uNum, namedParams, rsg);
     }
     else if (agentType == "fixedKickAgent") {
         cerr << "creating OptimizationBehaviorFixedKick" << endl;

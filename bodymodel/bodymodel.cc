@@ -134,35 +134,45 @@ void BodyModel::initialiseEffectors() {
         effector.push_back(Effector(0, 0, 0, 0, 0, 0));
     }
 
+    // PID controller parameters
+    double P = 0.15;
+    double I = 0.0;
+    double D = 0.01;
+    double ET = 2.0;
+
+    if (isGazebo()) {
+        P = 0.2;
+    }
+
     //                          minAng  maxAng
-    effector[EFF_H1] = Effector(-120.0, 120.0, 0.15, 0, 0.01, 2.0);//NECK
-    effector[EFF_H2] = Effector(-45.0, 45.0, 0.15, 0, 0.01, 2.0);//HEAD
+    effector[EFF_H1] = Effector(-120.0, 120.0, P, I, D, ET);//NECK
+    effector[EFF_H2] = Effector(-45.0, 45.0, P, I, D, ET);//HEAD
 
-    effector[EFF_LA1] = Effector(-120.0, 120.0, 0.15, 0, 0.01, 2.0);//SHOULDER (-y)
-    effector[EFF_LA2] = Effector(-1.0, 95.0, 0.15, 0, 0.01, 2.0);//UPPERARM (z)
-    effector[EFF_LA3] = Effector(-120.0, 120.0, 0.15, 0, 0.01, 2.0);//LOWERARM (x)
-    effector[EFF_LA4] = Effector(-90.0, 1.0, 0.15, 0, 0.01, 2.0);//ELBOW (z)
+    effector[EFF_LA1] = Effector(-120.0, 120.0, P, I, D, ET);//SHOULDER (-y)
+    effector[EFF_LA2] = Effector(-1.0, 95.0, P, I, D, ET);//UPPERARM (z)
+    effector[EFF_LA3] = Effector(-120.0, 120.0, P, I, D, ET);//LOWERARM (x)
+    effector[EFF_LA4] = Effector(-90.0, 1.0, P, I, D, ET);//ELBOW (z)
 
-    effector[EFF_RA1] = Effector(-120.0, 120.0, 0.15, 0, 0.01, 2.0);//SHOULDER (-y)
-    effector[EFF_RA2] = Effector(-95.0, 1.0, 0.15, 0, 0.01, 2.0);//UPPERARM (z)
-    effector[EFF_RA3] = Effector(-120.0, 120.0, 0.15, 0, 0.01, 2.0);//LOWERARM (x)
-    effector[EFF_RA4] = Effector(-1.0, 90.0, 0.15, 0, 0.01, 2.0);//ELBOW (z)
+    effector[EFF_RA1] = Effector(-120.0, 120.0, P, I, D, ET);//SHOULDER (-y)
+    effector[EFF_RA2] = Effector(-95.0, 1.0, P, I, D, ET);//UPPERARM (z)
+    effector[EFF_RA3] = Effector(-120.0, 120.0, P, I, D, ET);//LOWERARM (x)
+    effector[EFF_RA4] = Effector(-1.0, 90.0, P, I, D, ET);//ELBOW (z)
 
-    effector[EFF_LL1] = Effector(-90.0, 1.0, 0.15, 0, 0.01, 2.0);//HIP1 (y, -z)
-    effector[EFF_LL2] = Effector(-25.0, 45.0, 0.15, 0, 0.01, 2.0);//HIP2 (x)
-    effector[EFF_LL3] = Effector(-25.0, 100.0, 0.15, 0, 0.01, 2.0);//HIP3 (-y)
-    effector[EFF_LL4] = Effector(-130.0, 1.0, 0.15, 0, 0.01, 2.0);//KNEE (-y)
-    effector[EFF_LL5] = Effector(-45.0, 75.0, 0.15, 0, 0.01, 2.0);//ANKLE PITCH (-y)
-    effector[EFF_LL6] = Effector(-45.0, 25.0, 0.15, 0, 0.01, 2.0);//ANKLE ROLL (x)
-    effector[EFF_LL7] = Effector(-1.0, 70.0, 0.15, 0, 0.01, 2.0);//TOE
+    effector[EFF_LL1] = Effector(-90.0, 1.0, P, I, D, ET);//HIP1 (y, -z)
+    effector[EFF_LL2] = Effector(-25.0, 45.0, P, I, D, ET);//HIP2 (x)
+    effector[EFF_LL3] = Effector(-25.0, 100.0, P, I, D, ET);//HIP3 (-y)
+    effector[EFF_LL4] = Effector(-130.0, 1.0, P, I, D, ET);//KNEE (-y)
+    effector[EFF_LL5] = Effector(-45.0, 75.0, P, I, D, ET);//ANKLE PITCH (-y)
+    effector[EFF_LL6] = Effector(-45.0, 25.0, P, I, D, ET);//ANKLE ROLL (x)
+    effector[EFF_LL7] = Effector(-1.0, 70.0, P, I, D, ET);//TOE
 
-    effector[EFF_RL1] = Effector(-90.0, 1.0, 0.15, 0, 0.01, 2.0);//HIP1 (y, z)
-    effector[EFF_RL2] = Effector(-45.0, 25.0, 0.15, 0, 0.01, 2.0);//HIP2 (x)
-    effector[EFF_RL3] = Effector(-25.0, 100.0, 0.15, 0, 0.01, 2.0);//HIP3 (-y)
-    effector[EFF_RL4] = Effector(-130.0, 1.0, 0.15, 0, 0.01, 2.0);//KNEE (-y)
-    effector[EFF_RL5] = Effector(-45.0, 75.0, 0.15, 0, 0.01, 2.0);//ANKLE PITCH (-y)
-    effector[EFF_RL6] = Effector(-25.0, 45.0, 0.15, 0, 0.01, 2.0);//ANKLE ROLL (x)
-    effector[EFF_RL7] = Effector(-1.0, 70.0, 0.15, 0, 0.01, 2.0);//TOE
+    effector[EFF_RL1] = Effector(-90.0, 1.0, P, I, D, ET);//HIP1 (y, z)
+    effector[EFF_RL2] = Effector(-45.0, 25.0, P, I, D, ET);//HIP2 (x)
+    effector[EFF_RL3] = Effector(-25.0, 100.0, P, I, D, ET);//HIP3 (-y)
+    effector[EFF_RL4] = Effector(-130.0, 1.0, P, I, D, ET);//KNEE (-y)
+    effector[EFF_RL5] = Effector(-45.0, 75.0, P, I, D, ET);//ANKLE PITCH (-y)
+    effector[EFF_RL6] = Effector(-25.0, 45.0, P, I, D, ET);//ANKLE ROLL (x)
+    effector[EFF_RL7] = Effector(-1.0, 70.0, P, I, D, ET);//TOE
 
 
     // Inializing reflection logic
@@ -1568,6 +1578,10 @@ VecPosition BodyModel::getCenterOfMass(int bodyPart, double &totalMass) const {
 
 bool BodyModel::hasToe() {
     return agentBodyType == 4;
+}
+
+bool BodyModel::isGazebo() {
+    return agentBodyType == GAZEBO_AGENT_TYPE;
 }
 
 /**
