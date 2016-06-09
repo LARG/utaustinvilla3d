@@ -88,6 +88,12 @@ See the *optimization* directory.
 (http://www.cs.utexas.edu/~AustinVilla/sim/3dsimulation/publications.html)
 
 If you use this code for research purposes, please consider citing one or more research papers listed at the above link which includes the following topics and papers:
+##### Code Release
+Patrick MacAlpine and Peter Stone. 
+UT Austin Villa RoboCup 3D Simulation Base Code Release. 
+In Sven Behnke, Daniel D. Lee, Sanem Sariel, and Raymond Sheh, editors, RoboCup 2016: Robot Soccer World Cup XX, Lecture Notes in Artificial Intelligence, Springer Verlag, Berlin, 2016.
+(http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-LNAI16-MacAlpine2.html)
+
 ##### Walk Engine 
 Patrick MacAlpine, Samuel Barrett, Daniel Urieli, Victor Vu, and Peter Stone. 
 Design and Optimization of an Omnidirectional Humanoid Walk: A Winning Approach at the RoboCup 2011 3D Simulation Competition. 
