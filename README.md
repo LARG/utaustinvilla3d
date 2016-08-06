@@ -5,6 +5,9 @@ UT Austin Villa RoboCup 3D simulation team base code release
 ### About: 
 This release is based off the UT Austin Villa RoboCup 3D simulation league team.  
 
+![demobehavior](https://cloud.githubusercontent.com/assets/7802157/17454416/142ef6c4-5b5a-11e6-900d-7b4fe81beb79.png)
+*Video of default demo behavior* ([YouTube](https://www.youtube.com/watch?v=b47enPRhFR4), [mp4](http://www.cs.utexas.edu/~AustinVilla/sim/3dsimulation/AustinVilla3DSimulationFiles/2016/videos/UTABaseCodeReleaseDemoBehavior.mp4))
+
 #### What it includes:
 * Omnidirectional walk engine based on a double inverted pendulum model 
 * A skill description language for specifying parameterized skills/behaviors
@@ -64,6 +67,7 @@ Run agent for Gazebo RoboCup 3D simulation plugin:
 ```bash
 ./start_gazebo.sh <host>
 ```
+*Video of default walking behavior in Gazebo:* ([YouTube](https://www.youtube.com/watch?v=E3LTkFFt5eA), [mp4](http://www.cs.utexas.edu/~AustinVilla/sim/3dsimulation/AustinVilla3DSimulationFiles/2016/videos/GazeboWalk.mp4))
 Kill team:
 ```bash
 ./kill.sh
