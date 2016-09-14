@@ -20,7 +20,7 @@ public:
     virtual ~Macro() {}
 
     virtual void execute(BodyModel *bodyModel, const WorldModel *worldModel) = 0;
-    virtual shared_ptr<Macro> getReflection(BodyModel *bodyModel) = 0;
+    virtual boost::shared_ptr<Macro> getReflection(BodyModel *bodyModel) = 0;
     virtual void display() = 0;
 
     virtual bool canExecute(const BodyModel *bodyModel, const WorldModel *worldModel) const {
@@ -47,7 +47,7 @@ public:
 
     virtual void execute(BodyModel *bodyModel, const WorldModel *worldModel);
 
-    virtual shared_ptr<Macro> getReflection(BodyModel *bodyModel);
+    virtual boost::shared_ptr<Macro> getReflection(BodyModel *bodyModel);
 
     virtual void display();
 };
@@ -70,7 +70,7 @@ public:
 
     virtual void execute(BodyModel *bodyModel, const WorldModel *worldModel);
 
-    virtual shared_ptr<Macro> getReflection(BodyModel *bodyModel);
+    virtual boost::shared_ptr<Macro> getReflection(BodyModel *bodyModel);
 
     virtual void display();
 };
@@ -99,7 +99,7 @@ public:
 
     virtual bool canExecute(const BodyModel *bodyModel, const WorldModel *worldModel) const;
 
-    virtual shared_ptr<Macro> getReflection(BodyModel *bodyModel);
+    virtual boost::shared_ptr<Macro> getReflection(BodyModel *bodyModel);
 
     virtual void display();
 };
@@ -122,8 +122,8 @@ private:
 protected:
 
     const int legIDX;
-    shared_ptr<Curve3D> curve;              // XYZ curve, relative to the ball
-    shared_ptr<Curve3D> rpy_curve;          // RPY curve
+    boost::shared_ptr<Curve3D> curve;              // XYZ curve, relative to the ball
+    boost::shared_ptr<Curve3D> rpy_curve;          // RPY curve
     VecPosition curveOffsetWrtTorso;
     const VecPosition curveOffsetWrtBall;
     float t;
@@ -135,7 +135,7 @@ public:
 
     virtual void execute(BodyModel *bodyModel, const WorldModel *worldModel);
     virtual bool canExecute(const BodyModel *bodyModel, const WorldModel *worldModel) const;
-    virtual shared_ptr<Macro> getReflection(BodyModel *bodyModel);
+    virtual boost::shared_ptr<Macro> getReflection(BodyModel *bodyModel);
     virtual void display();
     virtual void setTimeParam(const float & t_);
 };
@@ -152,7 +152,7 @@ public:
 
     virtual void execute(BodyModel *bodyModel, const WorldModel *worldModel);
 
-    virtual shared_ptr<Macro> getReflection(BodyModel *bodyModel);
+    virtual boost::shared_ptr<Macro> getReflection(BodyModel *bodyModel);
 
     virtual void display();
 };
@@ -175,7 +175,7 @@ public:
 
     virtual void execute(BodyModel *bodyModel, const WorldModel *worldModel);
 
-    virtual shared_ptr<Macro> getReflection(BodyModel *bodyModel);
+    virtual boost::shared_ptr<Macro> getReflection(BodyModel *bodyModel);
 
     virtual void display();
 };
@@ -199,7 +199,7 @@ public:
 
     virtual bool canExecute(const BodyModel *bodyModel, const WorldModel *worldModel) const;
 
-    virtual shared_ptr<Macro> getReflection(BodyModel *bodyModel);
+    virtual boost::shared_ptr<Macro> getReflection(BodyModel *bodyModel);
 
     virtual void display();
 };
@@ -214,7 +214,7 @@ class KeyFrame {
 
 private:
 protected:
-    vector< shared_ptr<Macro> > macros;
+    vector< boost::shared_ptr<Macro> > macros;
 
     bool toWaitTime; // Default: false.
     double waitTime; // Default: 0.
@@ -229,7 +229,7 @@ public:
     KeyFrame();
     ~KeyFrame() {};
 
-    void appendMacro(shared_ptr<Macro> macro);
+    void appendMacro(boost::shared_ptr<Macro> macro);
     void execute(BodyModel *bodyModel, const WorldModel *worldModel); // Mainly a set.
 
     // Setting values to specific data members.
@@ -240,7 +240,7 @@ public:
     void setMaxWaitTime( double value );
 
     bool done(BodyModel *bodyModel, const WorldModel *worldModel, const double &setTime);
-    shared_ptr<KeyFrame> getReflection(BodyModel *bodyModel);
+    boost::shared_ptr<KeyFrame> getReflection(BodyModel *bodyModel);
 
     virtual bool canExecute(const BodyModel *bodyModel, const WorldModel *worldModel) const;
 
@@ -257,7 +257,7 @@ class Skill {
 
 private:
 protected:
-    vector< shared_ptr<KeyFrame> > keyFrames;
+    vector< boost::shared_ptr<KeyFrame> > keyFrames;
     int currentKeyFrame;
     bool currentKeyFrameSet;
     double currentKeyFrameSetTime;
@@ -275,9 +275,9 @@ public:
 
     bool canExecute(const BodyModel *bodyModel, const WorldModel *worldModel) const;
 
-    void appendKeyFrame( shared_ptr<KeyFrame> keyFrame );
+    void appendKeyFrame( boost::shared_ptr<KeyFrame> keyFrame );
 
-    shared_ptr<Skill> getReflection(BodyModel *bodyModel);
+    boost::shared_ptr<Skill> getReflection(BodyModel *bodyModel);
 
     void display();
 

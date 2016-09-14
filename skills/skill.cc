@@ -23,7 +23,7 @@ void IncTar::execute(BodyModel *bodyModel, const WorldModel *worldModel) {
     }
 }
 
-shared_ptr<Macro>
+boost::shared_ptr<Macro>
 IncTar::getReflection(BodyModel *bodyModel) {
 
     vector<int> newEffIDs;
@@ -40,7 +40,7 @@ IncTar::getReflection(BodyModel *bodyModel) {
         newIncs.push_back( newIncrement );
     }
 
-    return shared_ptr<Macro>( new IncTar(newEffIDs, newIncs) );
+    return boost::shared_ptr<Macro>( new IncTar(newEffIDs, newIncs) );
 }
 
 void IncTar::display() {
@@ -66,7 +66,7 @@ void SetTar::execute(BodyModel *bodyModel, const WorldModel *worldModel) {
     }
 }
 
-shared_ptr<Macro>
+boost::shared_ptr<Macro>
 SetTar::getReflection(BodyModel *bodyModel) {
 
     vector<int> newEffIDs;
@@ -83,7 +83,7 @@ SetTar::getReflection(BodyModel *bodyModel) {
         newAngs.push_back( newAngle );
     }
 
-    return shared_ptr<Macro>( new SetTar(newEffIDs, newAngs) );
+    return boost::shared_ptr<Macro>( new SetTar(newEffIDs, newAngs) );
 }
 
 void SetTar::display() {
@@ -140,16 +140,16 @@ bool SetFoot::canExecute(const BodyModel *bodyModel, const WorldModel *worldMode
  * Reflets the Macro from between left and right foot.
  *
  * \bodyModel a BodyModel
- * \return a shared_ptr to a left/right reflected version of this SetFoot Macro.
+ * \return a boost::shared_ptr to a left/right reflected version of this SetFoot Macro.
  */
-shared_ptr<Macro> SetFoot::getReflection(BodyModel *bodyModel) {
+boost::shared_ptr<Macro> SetFoot::getReflection(BodyModel *bodyModel) {
 
     int newLegIDX;
     Pos6DOF newPos;
 
     bodyModel->getReflection(legIDX, targetPos, newLegIDX, newPos);
 
-    return shared_ptr<Macro> (new SetFoot(newLegIDX, newPos));
+    return boost::shared_ptr<Macro> (new SetFoot(newLegIDX, newPos));
 }
 
 /**
@@ -282,7 +282,7 @@ bool Curve::canExecute(const BodyModel *bodyModel, const WorldModel *worldModel)
     */
 }
 
-shared_ptr<Macro> Curve::getReflection(BodyModel *bodyModel) {
+boost::shared_ptr<Macro> Curve::getReflection(BodyModel *bodyModel) {
     int newLegIDX = -1;
 
     vector<VecPosition> controlPoints = curve->getControlPoints();
@@ -298,7 +298,7 @@ shared_ptr<Macro> Curve::getReflection(BodyModel *bodyModel) {
         newControlPoints[i] = newPos;
     }
 
-    return shared_ptr<Macro> (new Curve(newLegIDX, newControlPoints));
+    return boost::shared_ptr<Macro> (new Curve(newLegIDX, newControlPoints));
 }
 
 void Curve::display() {
@@ -335,7 +335,7 @@ void Reset::execute(BodyModel *bodyModel, const WorldModel *worldModel) {
     }
 }
 
-shared_ptr<Macro>
+boost::shared_ptr<Macro>
 Reset::getReflection(BodyModel *bodyModel) {
 
     vector<int> newComponents = components;
@@ -352,7 +352,7 @@ Reset::getReflection(BodyModel *bodyModel) {
             newComponents[i] = LEG_LEFT;
         }
     }
-    return shared_ptr<Macro>( new Reset( newComponents ) );
+    return boost::shared_ptr<Macro>( new Reset( newComponents ) );
 }
 
 void Reset::
@@ -382,7 +382,7 @@ void SetScale::execute(BodyModel *bodyModel, const WorldModel *worldModel) {
     }
 }
 
-shared_ptr<Macro>
+boost::shared_ptr<Macro>
 SetScale::getReflection(BodyModel *bodyModel) {
 
     vector<int> newEffIDs;
@@ -397,7 +397,7 @@ SetScale::getReflection(BodyModel *bodyModel) {
         newEffIDs.push_back( newEffID );
     }
 
-    return shared_ptr<Macro>( new SetScale(newEffIDs, targetScales) );
+    return boost::shared_ptr<Macro>( new SetScale(newEffIDs, targetScales) );
 }
 
 void SetScale::display() {
@@ -444,8 +444,8 @@ bool Stabilize::canExecute(const BodyModel *bodyModel, const WorldModel *worldMo
 /**
  * Reflets the Macro from between left and right foot.
  */
-shared_ptr<Macro> Stabilize::getReflection(BodyModel *bodyModel) {
-    return shared_ptr<Macro> (
+boost::shared_ptr<Macro> Stabilize::getReflection(BodyModel *bodyModel) {
+    return boost::shared_ptr<Macro> (
                new Stabilize(legIndex == LEG_LEFT ? LEG_RIGHT : LEG_LEFT,
                              VecPosition(zmp.getX(), -1.0 * zmp.getY(), 0)));
 }
@@ -549,13 +549,13 @@ void KeyFrame::setMaxWaitTime( double value ) {
     maxWaitTime = value;
 }
 
-void KeyFrame::appendMacro(shared_ptr<Macro> macro) {
+void KeyFrame::appendMacro(boost::shared_ptr<Macro> macro) {
     macros.push_back( macro );
 }
 
-shared_ptr<KeyFrame> KeyFrame::getReflection(BodyModel *bodyModel) {
+boost::shared_ptr<KeyFrame> KeyFrame::getReflection(BodyModel *bodyModel) {
 
-    shared_ptr<KeyFrame> reflection(new KeyFrame());
+    boost::shared_ptr<KeyFrame> reflection(new KeyFrame());
 
     reflection->setToWaitTime(this->toWaitTime);
     reflection->setWaitTime(this->waitTime);
@@ -578,7 +578,7 @@ void KeyFrame::display() {
     cerr << "toWaitTargets=" << toWaitTargets << endl;
     cerr << "maxWaitTime=" << maxWaitTime << endl;
     cerr << "Macros:\n";
-    vector< shared_ptr<Macro> >::iterator it( macros.begin() ), end( macros.end() );
+    vector< boost::shared_ptr<Macro> >::iterator it( macros.begin() ), end( macros.end() );
     for( ; it != end; ++it ) {
         (*it)->display();
     }
@@ -653,14 +653,14 @@ bool Skill::canExecute(const BodyModel *bodyModel, const WorldModel *worldModel)
 }
 
 void Skill::
-appendKeyFrame( shared_ptr<KeyFrame> keyFrame ) {
+appendKeyFrame( boost::shared_ptr<KeyFrame> keyFrame ) {
     keyFrames.push_back( keyFrame );
     reset(); // just in case, we do it for each key frame added
 }
 
-shared_ptr<Skill> Skill::getReflection(BodyModel *bodyModel) {
+boost::shared_ptr<Skill> Skill::getReflection(BodyModel *bodyModel) {
 
-    shared_ptr<Skill> reflection(new Skill());
+    boost::shared_ptr<Skill> reflection(new Skill());
 
     reflection->currentKeyFrame = this->currentKeyFrame;
     reflection->currentKeyFrameSet = this->currentKeyFrameSet;
@@ -695,7 +695,7 @@ shared_ptr<Skill> Skill::getReflection(BodyModel *bodyModel) {
 
 void Skill::display() {
     cerr << "Displaying skill" << endl;
-    vector< shared_ptr<KeyFrame> >::iterator it( keyFrames.begin() ), end( keyFrames.end() );
+    vector< boost::shared_ptr<KeyFrame> >::iterator it( keyFrames.begin() ), end( keyFrames.end() );
     for( ; it != end; ++it ) {
         (*it)->display();
     }

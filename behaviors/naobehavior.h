@@ -54,7 +54,7 @@ protected:
     // TODO: eliminate these and use a better solution
     string classname;
 
-    map< SkillType, shared_ptr<Skill> > skills;
+    map< SkillType, boost::shared_ptr<Skill> > skills;
     const map<string, string>& namedParams;
     string rsg;
 
