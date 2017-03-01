@@ -8,8 +8,8 @@ extern int agentBodyType;
  * Filling params x y angle
  */
 void NaoBehavior::beam( double& beamX, double& beamY, double& beamAngle ) {
-    beamX = -HALF_FIELD_X + worldModel->getUNum();
-    beamY = 0;
+    beamX = -2* worldModel->getUNum();
+    beamY = worldModel->getUNum();
     beamAngle = 0;
 }
 
@@ -62,7 +62,7 @@ SkillType NaoBehavior::selectSkill() {
 
     // Kick ball toward opponent's goal
     //return kickBall(KICK_FORWARD, VecPosition(HALF_FIELD_X, 0, 0)); // Basic kick
-    //return kickBall(KICK_IK, VecPosition(HALF_FIELD_X, 0, 0)); // IK kick
+    return kickBall(KICK_IK, VecPosition(HALF_FIELD_X, 0, 0)); // IK kick
 
     // Just stand in place
     //return SKILL_STAND;

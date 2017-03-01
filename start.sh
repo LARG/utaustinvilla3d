@@ -7,7 +7,7 @@
 AGENT_BINARY=agentspark
 BINARY_DIR="."
 LIBS_DIR="./libs"
-NUM_PLAYERS=11
+NUM_PLAYERS=4
 
 team="UTAustinVilla_Base"
 host="localhost"
