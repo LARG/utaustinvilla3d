@@ -471,7 +471,7 @@ void RVSender::drawSphere(string name, double x, double y, double z,
     }
     string id = getDrawingId(&name);
     string buf = string(id);
-    drawSphere(x, y, 0, radius, r, g, b, &buf);
+    drawSphere(x, y, z, radius, r, g, b, &buf);
     updateDrawings(id, buf);
 }
 
@@ -496,7 +496,7 @@ void RVSender::drawSphere(double x, double y, double z,
     }
     string id = getUniqueId();
     string buf = string(id);
-    drawSphere(x, y, 0, radius, r, g, b, &buf);
+    drawSphere(x, y, z, radius, r, g, b, &buf);
     swapBuffers(&id);
 }
 
