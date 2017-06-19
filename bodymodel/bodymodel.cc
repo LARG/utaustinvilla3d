@@ -24,9 +24,6 @@ BodyModel::BodyModel(WorldModel *worldModel) {
         joint.push_back(SIMJoint());
     }
 
-    initialiseEffectors();
-    initialiseComponents();
-
     FRPCentreLeft = VecPosition(0, 0, 0);
     FRPForceLeft = VecPosition(0, 0, 0);
     FRPCentreRight = VecPosition(0, 0, 0);
