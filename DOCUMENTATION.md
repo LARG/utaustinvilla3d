@@ -70,10 +70,10 @@ Behaviors executed during penalty kicks are in *behaviors/pkbehaviors.&ast;*.  P
 ### Optimization 
 A considerable amount of the UT Austin Villa team's efforts in preparing for RoboCup competitions has been in the area of skill optimization and optimizing parameters for walks and kicks.  Example agents for optimizing a kick and forward walk are provided in the *optimization* directory.  Optimization agents perform some task (such as kicking a ball) and then determine how well they did at the task (such as how far they kicked the ball) with the `updateFitness()` method.  When performing an optimization task agents are able to change the world as needed (such as move themselves and the ball around) by sending training command parser commands to the server on the monitor port through the `setMonMessage()` method.  More information about optimizations performed by the team can be found in the following paper:
 
-Patrick MacAlpine, Mike Depinet, and Peter Stone. 
-UT Austin Villa 2014: RoboCup 3D Simulation League Champion via Overlapping Layered Learning. 
-In Proceedings of the Twenty-Ninth AAAI Conference on Artificial Intelligence (AAAI), January 2015.
-(http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-AAAI15-MacAlpine2.html)
+Patrick MacAlpine and Peter Stone. 
+Overlapping Layered Learning.
+Artificial Intelligence (AIJ), 254:21-43, Elsevier, January 2018.
+(http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-AIJ18-MacAlpine.html)
 
 
 ### More Documentation 
