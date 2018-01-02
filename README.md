@@ -34,7 +34,7 @@ This release is based off the UT Austin Villa RoboCup 3D simulation league team.
 * Threads library
 
 Instructions for installing simspark and rcssserver3d:
-http://simspark.sourceforge.net/wiki/index.php/Installation_on_Linux
+https://gitlab.com/robocup-sim/SimSpark/wikis/Installation-on-Linux
 
 It's optional (recommended) to install the roboviz monitor:
 https://github.com/magmaOffenburg/RoboViz
@@ -84,11 +84,11 @@ List command line options:
 See *DOCUMENTATION* for some high level documentation about the codebase.
 
 
-###Demo behaviors:
+### Demo behaviors:
 See the methods in `selectSkill()` in *behaviors/strategy.cc* for demo behaviors.
 
 
-###Optimization task examples:
+### Optimization task examples:
 See the *optimization* directory.
 
 
@@ -113,10 +113,10 @@ In Proceedings of the Twenty-Sixth AAAI Conference on Artificial Intelligence (A
 (http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-AAAI12-MacAlpine.html)
 
 ##### Optimization 
-Patrick MacAlpine, Mike Depinet, and Peter Stone. 
-UT Austin Villa 2014: RoboCup 3D Simulation League Champion via Overlapping Layered Learning. 
-In Proceedings of the Twenty-Ninth AAAI Conference on Artificial Intelligence (AAAI), January 2015.
-(http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-AAAI15-MacAlpine2.html)
+Patrick MacAlpine and Peter Stone. 
+Overlapping Layered Learning.
+Artificial Intelligence (AIJ), 254:21-43, Elsevier, January 2018.
+(http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-AIJ18-MacAlpine.html)
 
 ##### Winning team paper
 Patrick MacAlpine, Josiah Hanna, Jason Liang, and Peter Stone. 
