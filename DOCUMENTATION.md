@@ -76,6 +76,10 @@ Artificial Intelligence (AIJ), 254:21-43, Elsevier, January 2018.
 (http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-AIJ18-MacAlpine.html)
 
 
+### Collecting Game Statistics/Data 
+Scripts and code for collecting game statistics/data are provided in the *stats* directory.
+
+
 ### More Documentation 
 More information about the UT Austin Villa agent, including a fairly comprehensive description of its behavior, can be found in the following paper:
 
