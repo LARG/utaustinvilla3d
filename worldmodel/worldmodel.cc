@@ -79,6 +79,10 @@ WorldModel::WorldModel() {
 
     ballKalmanFilter = new BallKF(this);
     opponentKalmanFilters = new PlayerKF(this);
+
+    for (unsigned int i = 0; i < NUM_AGENTS; i++) {
+        setTeammateLastHeardTime(i, -1);
+    }
 }
 
 WorldModel::~WorldModel() {
@@ -269,5 +273,4 @@ updateMatricesAndMovingObjs( VecPosition& fieldXPlusYPlus,
 
         }
     }
-
 }

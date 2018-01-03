@@ -21,6 +21,7 @@ This release is based off the UT Austin Villa RoboCup 3D simulation league team.
 * Communication system previously provided for use in drop-in player challenges
 * Example behaviors/tasks for optimizing a kick and forward walk
 * Support for Gazebo RoboCup 3D simulation plugin (https://bitbucket.org/osrf/robocup3ds)
+* Scripts and code for collecting game statistics
 
 #### What is not included: 
 * The team's complete set of skills such as long kicks and goalie dives

@@ -210,6 +210,12 @@ protected:
     double getLimitingAngleForward();
 
     bool beamablePlayMode();
+    bool improperPlayMode();
+    bool improperPlayMode(int pm);
+    bool kickPlayMode();
+    bool kickPlayMode(int pm, bool eitherTeam=false);
+    bool isIndirectKick();
+    bool isIndirectKick(int pm);
 
     void readSkillsFromFile( const std::string& filename);
 

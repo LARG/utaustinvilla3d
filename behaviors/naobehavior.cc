@@ -960,6 +960,102 @@ bool NaoBehavior::beamablePlayMode() {
     return pm == PM_BEFORE_KICK_OFF || pm == PM_GOAL_LEFT || pm == PM_GOAL_RIGHT;
 }
 
+bool NaoBehavior::improperPlayMode() {
+    return improperPlayMode(worldModel->getPlayMode());
+}
+
+/* Playmodes when we can't touch the ball or game is over (it's not proper to do so) */
+bool NaoBehavior::improperPlayMode(int pm) {
+
+    if(pm == PM_BEFORE_KICK_OFF) {
+        return true;
+    }
+    else if(pm == PM_GAME_OVER) {
+        return true;
+    }
+    else if(pm == PM_GOAL_LEFT) {
+        return true;
+    }
+    else if(pm == PM_GOAL_RIGHT) {
+        return true;
+    }
+
+    if(worldModel->getSide() == SIDE_LEFT) {
+
+        if(pm == PM_KICK_OFF_RIGHT) {
+            return true;
+        }
+        else if(pm == PM_KICK_IN_RIGHT) {
+            return true;
+        }
+        else if(pm == PM_CORNER_KICK_RIGHT) {
+            return true;
+        }
+        else if(pm == PM_GOAL_KICK_RIGHT) {
+            return true;
+        }
+        else if(pm == PM_OFFSIDE_LEFT) {
+            return true;
+        }
+        else if(pm == PM_FREE_KICK_RIGHT) {
+            return true;
+        }
+        else if(pm == PM_DIRECT_FREE_KICK_RIGHT) {
+            return true;
+        }
+    }
+    else if(worldModel->getSide() == SIDE_RIGHT) {
+
+        if(pm == PM_KICK_OFF_LEFT) {
+            return true;
+        }
+        else if(pm == PM_KICK_IN_LEFT) {
+            return true;
+        }
+        else if(pm == PM_CORNER_KICK_LEFT) {
+            return true;
+        }
+        else if(pm == PM_GOAL_KICK_LEFT) {
+            return true;
+        }
+        else if(pm == PM_OFFSIDE_RIGHT) {
+            return true;
+        }
+        else if(pm == PM_FREE_KICK_LEFT) {
+            return true;
+        }
+        else if(pm == PM_DIRECT_FREE_KICK_LEFT) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+bool NaoBehavior::kickPlayMode() {
+    return kickPlayMode(worldModel->getPlayMode());
+}
+
+bool NaoBehavior::kickPlayMode(int pm, bool eitherTeam) {
+    if(!eitherTeam && improperPlayMode(pm)) {
+        return false;
+    }
+
+    return pm == PM_CORNER_KICK_LEFT || pm == PM_CORNER_KICK_RIGHT || pm == PM_KICK_IN_LEFT || pm == PM_KICK_IN_RIGHT || pm == PM_FREE_KICK_LEFT || pm == PM_FREE_KICK_RIGHT || pm == PM_DIRECT_FREE_KICK_LEFT || pm == PM_DIRECT_FREE_KICK_RIGHT || pm == PM_GOAL_KICK_LEFT || pm == PM_GOAL_KICK_RIGHT || pm == PM_KICK_OFF_LEFT || pm == PM_KICK_OFF_RIGHT;
+}
+
+bool NaoBehavior::isIndirectKick() {
+    return isIndirectKick(worldModel->getPlayMode());
+}
+
+bool NaoBehavior::isIndirectKick(int pm) {
+    if(!kickPlayMode(pm, true)) {
+        return false;
+    }
+
+    return !(pm == PM_DIRECT_FREE_KICK_LEFT || pm == PM_DIRECT_FREE_KICK_RIGHT || pm == PM_CORNER_KICK_LEFT || pm == PM_CORNER_KICK_RIGHT || pm == PM_GOAL_KICK_LEFT || pm == PM_GOAL_KICK_RIGHT);
+}
+
 
 /* Set message to be send to the monitor port */
 void NaoBehavior::setMonMessage(const std::string& msg) {

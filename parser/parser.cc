@@ -448,6 +448,8 @@ bool Parser::parseHear(const string &str) {
     double deltaServerToGameTime = worldModel->getTime()-worldModel->getGameTime();
 
     if (processHearMessage(message, hearTime+deltaServerToGameTime, playerNum, timeBallLastSeen, ballX, ballY, playerX, playerY, fallen, time)) {
+        worldModel->setTeammateLastHeardTime(playerNum-1, worldModel->getTime());
+
         worldModel->setFallenTeammate(playerNum-1, fallen);
 
         if (!self && !fallen) {

@@ -76,6 +76,8 @@ private:
     BallKF* ballKalmanFilter;
     PlayerKF* opponentKalmanFilters;
 
+    double teammateLastHeardTime[NUM_AGENTS];
+
 public:
 
     WorldModel();
@@ -485,6 +487,13 @@ public:
     }
     PlayerKF* getOpponentKalmanFilters() const {
         return opponentKalmanFilters;
+    }
+
+    double getTeammateLastHeardTime(int index) const {
+        return teammateLastHeardTime[index];
+    }
+    void setTeammateLastHeardTime(int index, double time) {
+        teammateLastHeardTime[index] = time;
     }
 
     void display();

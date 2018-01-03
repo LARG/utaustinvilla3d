@@ -12,6 +12,7 @@
 #include "optimization/optimizationbehaviors.h"
 #include "behaviors/pkbehaviors.h"
 #include "behaviors/gazebobehavior.h"
+#include "stats/recordstatsbehavior.h"
 
 using namespace rcss::net;
 using namespace std;
@@ -65,6 +66,7 @@ void PrintHelp()
     cout << " --pkshooter\tshooter for penalty kick shootout" << endl;
     cout << " --gazebo\tagent for Gazebo RoboCup 3D simulation plugin" << endl;
     cout << " --optimize <agent-type>\toptimization agent type" << endl;
+    cout << " --recordstats\t record game statistics" << endl;
     cout << " --mhost=<IP>\tIP of the monitor for sending draw commands" << endl;
     cout << " --mport <port>\tport of the monitor for training command parser" << endl;
 
@@ -240,8 +242,11 @@ void ReadOptions(int argc, char* argv[])
         else if (strcmp(argv[i], "--pkshooter") == 0) {
             agentType = "pkshooter";
         }
-	else if (strcmp(argv[i], "--gazebo") == 0) {
+        else if (strcmp(argv[i], "--gazebo") == 0) {
             agentType = "gazebo";
+        }
+        else if (strcmp(argv[i], "--recordstats") == 0) {
+            agentType = "recordstats";
         }
     } // for-loop
 }
@@ -485,7 +490,7 @@ void Run()
         behavior = new PKShooterBehavior(teamName, uNum, namedParams, rsg);
     }
     else if (agentType == "gazebo") {
-      agentBodyType = GAZEBO_AGENT_TYPE;
+        agentBodyType = GAZEBO_AGENT_TYPE;
         behavior = new GazeboBehavior(teamName, uNum, namedParams, rsg);
     }
     else if (agentType == "fixedKickAgent") {
@@ -503,6 +508,10 @@ void Run()
                 namedParams,
                 rsg,
                 outputFile);
+    }
+    else if ( agentType == "recordstats") {
+        behavior = new RecordStatsBehavior(teamName, uNum, namedParams, rsg,
+                                           outputFile);
     }
     else {
         throw "unknown agent type";
