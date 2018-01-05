@@ -16,6 +16,8 @@ if(NOT CMAKE_CXX_FLAGS)
   set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-unused")
 endif(NOT CMAKE_CXX_FLAGS)
 
+set(CMAKE_EXE_LINKER_FLAGS "-Wl,--enable-new-dtags")
+
 set(CORE_PATH utwalk)
 
 include_directories(
