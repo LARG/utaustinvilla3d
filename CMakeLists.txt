@@ -18,6 +18,11 @@ endif(NOT CMAKE_CXX_FLAGS)
 
 set(CMAKE_EXE_LINKER_FLAGS "-Wl,--enable-new-dtags")
 
+add_custom_command(
+  TARGET utaustinvilla POST_BUILD
+  COMMAND ${CMAKE_COMMAND} -E copy ${RCSSNET3D_LIBRARY} libs
+)
+
 set(CORE_PATH utwalk)
 
 include_directories(
@@ -81,11 +86,13 @@ set(SRCS
   stats/recordstatsbehavior.cc
 )
 
-add_executable(agentspark 
+set(BINARY agentspark)
+
+add_executable(${BINARY}
 ${SRCS}
 )
 
-target_link_libraries(agentspark
+target_link_libraries(${BINARY}
 ${RCSSNET3D_LIBRARY}
 ${Boost_SYSTEM_LIBRARY}
 dl
@@ -93,3 +100,9 @@ ${CMAKE_THREAD_LIBS_INIT}
 rt 
 )
 
+# Automatically copy linked shared objects to libs directory after evey build
+#add_custom_command(TARGET ${BINARY}
+#  POST_BUILD
+#  COMMAND ${CMAKE_SOURCE_DIR}/scripts/copy_libs.sh ARGS ${BINARY} libs
+#)
+#set_directory_properties(PROPERTIES ADDITIONAL_MAKE_CLEAN_FILES libs)

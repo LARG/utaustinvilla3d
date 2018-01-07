@@ -5,3 +5,4 @@ CMakeCache.txt
 CMakeFiles
 Makefile
 agentspark
+libs/*.so*

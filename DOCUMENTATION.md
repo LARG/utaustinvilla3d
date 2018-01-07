@@ -80,6 +80,10 @@ Artificial Intelligence (AIJ), 254:21-43, Elsevier, January 2018.
 Scripts and code for collecting game statistics/data are provided in the *stats* directory.
 
 
+### Useful Scripts 
+Some useful scripts for copying shared objects to the *libs* directory to be loaded at runtime, and copying files needed to run the binary to a new directory, are provided in the *scripts* directory.
+
+
 ### More Documentation 
 More information about the UT Austin Villa agent, including a fairly comprehensive description of its behavior, can be found in the following paper:
 
