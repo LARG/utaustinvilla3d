@@ -5,4 +5,4 @@ Parameter files contain parameter values that the agent can load in at runtime. 
 
 Parameter files are specified and loaded with the ```--paramsfile <parameter_file>``` command line argument, and multiple parameter files can be loaded one after the other with newly loaded parameter values replacing the values of previously loaded parameters with the same name (key).  Parameters are loaded into an `std::map` called `namedParams`.
 
-All agents should first load the *defaultParams.txt* parameter file, and then the appropriate *defaultParams_t&lt;type&gt;.txt* parameter file depending on an agent's body type, when starting and before loading any additional parameter files.
+All agents should first load the [defaultParams.txt](defaultParams.txt) parameter file, and then the appropriate *defaultParams_t&lt;type&gt;.txt* parameter file depending on an agent's body type, when starting and before loading any additional parameter files.
