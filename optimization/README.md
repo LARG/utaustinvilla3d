@@ -1,7 +1,7 @@
 # Optimization
 ---
 
-A couple example agents for executing a task and recording how well the agent did on the task (its fitness).  The *sample_start-optimization.sh* script runs rcssserver3d and an optimization behavior agent (fixedKickAgent or walkForwardAgent), with a provided file of parameters to test, that either attempts 10 kicks in a row (fixedKickAgent) or measures how far it can walk in 10 seconds (walkForwardAgent).  To choose between the kick or walk optimization task set the `task` variable at the beginning of the *sample_start-optimization.sh* script to either `"kick"` or `"walk"`.  Once an optimization task is completed the agent writes a fitness score to an output file.  As soon as the script detects that the output file is written it then kills the agent and server.
+A couple example agents for executing a task and recording how well the agent did on the task (its fitness).  The [sample_start-optimization.sh](sample_start-optimization.sh) script runs rcssserver3d and an optimization behavior agent (fixedKickAgent or walkForwardAgent), with a provided file of parameters to test, that either attempts 10 kicks in a row (fixedKickAgent) or measures how far it can walk in 10 seconds (walkForwardAgent).  To choose between the kick or walk optimization task set the `task` variable at the beginning of the [sample_start-optimization.sh](sample_start-optimization.sh) script to either `"kick"` or `"walk"`.  Once an optimization task is completed the agent writes a fitness score to an output file.  As soon as the script detects that the output file is written it then kills the agent and server.
 
 ##### Example usage:
 ```bash
