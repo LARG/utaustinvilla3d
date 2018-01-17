@@ -82,15 +82,15 @@ List command line options:
 ```
 
 ### Documentation:
-See *DOCUMENTATION* for some high level documentation about the codebase.
+See [DOCUMENTATION](DOCUMENTATION.md) for some high level documentation about the codebase.
 
 
 ### Demo behaviors:
-See the methods in `selectSkill()` in *behaviors/strategy.cc* for demo behaviors.
+See the methods in `selectSkill()` in [behaviors/strategy.cc](behaviors/strategy.cc) for demo behaviors.
 
 
 ### Optimization task examples:
-See the *optimization* directory.
+See the [optimization](optimization) directory.
 
 
 ### UT Austin Villa 3D simulation team homepage:
