@@ -3,7 +3,7 @@
 
 Files for defining skills represented as a series of fixed frame poses.  Skill files contain a series of commands and values that are executed by the `SkillParser`.  Values can be parameterized and loaded at runtime when entered as `$<parameter_name>`.
 
-To add a new skill to an agent the skill's skill file should be loaded in by calling `readSkillsFromFile()` in `NaoBehavior::NaoBehavior()`.  The skill should also be added to `enum SkillType` in *headers.h* and to `EnumParser<SkillType>` in *headers.cc*. 
+To add a new skill to an agent the skill's skill file should be loaded in by calling `readSkillsFromFile()` in `NaoBehavior::NaoBehavior()`.  The skill should also be added to `enum SkillType` in [headers/headers.h](../headers/headers.h) and to `EnumParser<SkillType>` in [headers/headers.cc](../headers/headers.cc). 
 
 Skill files are in the following format:
 
