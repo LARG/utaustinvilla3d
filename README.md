@@ -52,19 +52,21 @@ make
 ```
 
 ### Instructions for running agent:
-Run full team:
+First be sure to start the simulation server running.
+
+##### Run full team:
 ```bash
 ./start.sh <host>
 ```
-Run penalty kick shooter:
+##### Run penalty kick shooter:
 ```bash
 ./start_penalty_kicker.sh <host>
 ```
-Run penalty kick goalie:
+##### Run penalty kick goalie:
 ```bash
 ./start_penalty_goalie.sh <host>
 ```
-Run agent for Gazebo RoboCup 3D simulation plugin:
+##### Run agent for Gazebo RoboCup 3D simulation plugin:
 ```bash
 ./start_gazebo.sh <host>
 ```
@@ -72,11 +74,11 @@ Run agent for Gazebo RoboCup 3D simulation plugin:
 
 &nbsp;
 
-Kill team:
+##### Kill team:
 ```bash
 ./kill.sh
 ```
-List command line options:
+##### List command line options:
 ```bash
 ./agentspark --help
 ```
