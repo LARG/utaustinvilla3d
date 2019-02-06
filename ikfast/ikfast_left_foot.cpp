@@ -23,6 +23,8 @@
 #include <algorithm>
 #include <complex>
 
+using namespace std;
+
 #ifdef IKFAST_HEADER
 #include IKFAST_HEADER
 #endif
