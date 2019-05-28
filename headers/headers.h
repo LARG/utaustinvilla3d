@@ -255,6 +255,8 @@ const double EPSILON = 0.0001;
 #define PM_FREE_KICK_RIGHT        16
 #define PM_DIRECT_FREE_KICK_LEFT  17
 #define PM_DIRECT_FREE_KICK_RIGHT 18
+#define PM_PASS_LEFT              19
+#define PM_PASS_RIGHT             20
 
 //Directions
 #define DIR_LEFT  0

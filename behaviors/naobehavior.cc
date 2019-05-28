@@ -1003,6 +1003,9 @@ bool NaoBehavior::improperPlayMode(int pm) {
         else if(pm == PM_DIRECT_FREE_KICK_RIGHT) {
             return true;
         }
+        else if(pm == PM_PASS_RIGHT) {
+            return true;
+        }
     }
     else if(worldModel->getSide() == SIDE_RIGHT) {
 
@@ -1025,6 +1028,9 @@ bool NaoBehavior::improperPlayMode(int pm) {
             return true;
         }
         else if(pm == PM_DIRECT_FREE_KICK_LEFT) {
+            return true;
+        }
+        else if(pm == PM_PASS_LEFT) {
             return true;
         }
     }

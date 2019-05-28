@@ -233,6 +233,14 @@ bool Parser::parseGameState(const string &str) {
                 playMode = PM_DIRECT_FREE_KICK_RIGHT;
                 playModeValid = true;
             }
+            else if(!(playModeStr.compare("pass_left"))) {
+                playMode = PM_PASS_LEFT;
+                playModeValid = true;
+            }
+            else if(!(playModeStr.compare("pass_right"))) {
+                playMode = PM_PASS_RIGHT;
+                playModeValid = true;
+            }
             else {
                 playModeValid = false;
                 cout << "Unknown play mode: " << playModeStr << "\n";
