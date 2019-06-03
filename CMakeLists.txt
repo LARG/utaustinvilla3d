@@ -18,11 +18,6 @@ endif(NOT CMAKE_CXX_FLAGS)
 
 set(CMAKE_EXE_LINKER_FLAGS "-Wl,--enable-new-dtags")
 
-add_custom_command(
-  TARGET utaustinvilla POST_BUILD
-  COMMAND ${CMAKE_COMMAND} -E copy ${RCSSNET3D_LIBRARY} libs
-)
-
 set(CORE_PATH utwalk)
 
 include_directories(
