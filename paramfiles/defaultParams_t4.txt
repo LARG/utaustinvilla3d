@@ -4,55 +4,55 @@
 ### GETUP PARAMETERS ###
 ########################
 
-# default getup off front params
+# default getup off front params - optimized for no self collisions
 getup_parms_stateDownInitialWait	0.5
-getup_parms_stateDown3A1	30.0
-getup_parms_stateDown3L3	110.0
+getup_parms_stateDown3A1	50.98021756053253
+getup_parms_stateDown3L3	126.1220933612166
 getup_parms_stateDown3MinTime	0.04
-getup_parms_stateDown5L1	-45.0
+getup_parms_stateDown5L1	-48.00207256772667
 getup_parms_stateDown5MinTime	0.9
-getup_parms_stateDown7L1	-25.0
-getup_parms_stateDown7L3	60.0
+getup_parms_stateDown7L1	-22.340860939025024
+getup_parms_stateDown7L3	63.33360057004941
 getup_parms_stateDown7MinTime	0.3
 getup_parms_stateDown10MinTime	0.8
-getup_parms_stateDown3L7	0
-getup_parms_stateDown5L7	0
-getup_parms_stateDown7L7	0
+getup_parms_stateDown3L7	10.434125629408747
+getup_parms_stateDown5L7	-24.614475691676574
+getup_parms_stateDown7L7	-25.565997236105442
 
-# default getup off back params
+# default getup off back params - optimized for no self collisions
 getup_parms_stateUpInitialWait	0.5
-getup_parms_stateUp3A1	-120.0
-getup_parms_stateUp3A2	35.0
-getup_parms_stateUp3A4	60.0
-getup_parms_stateUp3L3	15.0
+getup_parms_stateUp3A1	-160.48868850844917
+getup_parms_stateUp3A2	43.87852475409584
+getup_parms_stateUp3A4	47.107544084593684
+getup_parms_stateUp3L3	15.740604821659796
 getup_parms_stateUp3MinTime	0.2
-getup_parms_stateUp5L3	110.0
+getup_parms_stateUp5L3	132.27670902584242
 getup_parms_stateUp5MinTime	0.04
-getup_parms_stateUp7L1	-35.0
+getup_parms_stateUp7L1	-33.46492505628697
 getup_parms_stateUp7MinTime	0.2
-getup_parms_stateUp9A1	30.0
-getup_parms_stateUp9L1	-80.0
-getup_parms_stateUp9L4	-60.0
-getup_parms_stateUp9L5	-70.0
-getup_parms_stateUp9L6	-40.0
+getup_parms_stateUp9A1	35.11715155456652
+getup_parms_stateUp9L1	-93.41203497109993
+getup_parms_stateUp9L4	-42.02538707170181
+getup_parms_stateUp9L5	-74.20809920914384
+getup_parms_stateUp9L6	-45.011664557354386
 getup_parms_stateUp9MinTime	0.2
-getup_parms_stateUp11A1	30.0
-getup_parms_stateUp11L1	-60.0 
-getup_parms_stateUp11L5	-80.0
+getup_parms_stateUp11A1	12.335079113997592
+getup_parms_stateUp11L1	-59.73823689637007
+getup_parms_stateUp11L5	-75.30629507279436
 getup_parms_stateUp11MinTime	0.4
-getup_parms_stateUp13A1	-90.0
-getup_parms_stateUp13L1	-30.0
-getup_parms_stateUp13L3	30.0
-getup_parms_stateUp13L4	-10.0 
-getup_parms_stateUp13L5	-10.0
+getup_parms_stateUp13A1	-92.92376016195993
+getup_parms_stateUp13L1	-19.862994508032
+getup_parms_stateUp13L3	6.715020876796658
+getup_parms_stateUp13L4	9.198657450095972
+getup_parms_stateUp13L5	-45.49461773853202
 getup_parms_stateUp13MinTime	0.04 
 getup_parms_stateUp15MinTime	0.6
-getup_parms_stateUp3L7		0
-getup_parms_stateUp5L7		0
-getup_parms_stateUp7L7		0
-getup_parms_stateUp9L7		0
-getup_parms_stateUp11L7		0
-getup_parms_stateUp13L7		0
+getup_parms_stateUp3L7	-13.906519868066766
+getup_parms_stateUp5L7	-13.153693919511753
+getup_parms_stateUp7L7	11.047229348390086
+getup_parms_stateUp9L7	-24.75948253132887
+getup_parms_stateUp11L7	-47.26657398170224
+getup_parms_stateUp13L7	11.057355562206059
 
 
 #######################

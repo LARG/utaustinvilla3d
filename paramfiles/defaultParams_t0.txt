@@ -1,5 +1,51 @@
 ### Default parameters loaded for all type 0 agents ###
 
+########################
+### GETUP PARAMETERS ###
+########################
+
+# getup off front params - optimized for no self collisions
+getup_parms_stateDownInitialWait	0.5
+getup_parms_stateDown3A1	51.67747278227646
+getup_parms_stateDown3L3	131.7535106037132
+getup_parms_stateDown3MinTime	0.04
+getup_parms_stateDown5L1	-45.61543864318751
+getup_parms_stateDown5MinTime	0.9
+getup_parms_stateDown7L1	7.146660948143131
+getup_parms_stateDown7L3	64.86293984615665
+getup_parms_stateDown7MinTime	0.3
+getup_parms_stateDown10MinTime	0.8
+
+# getup off back params - optimized for no self collisions
+getup_parms_stateUpInitialWait	0.5
+getup_parms_stateUp3A1	-137.82661679105144
+getup_parms_stateUp3A2	47.75746255861538
+getup_parms_stateUp3A4	62.08845222070459
+getup_parms_stateUp3L3	20.129514885250764
+getup_parms_stateUp3MinTime	0.2
+getup_parms_stateUp5L3	118.20227245026733
+getup_parms_stateUp5MinTime	0.04
+getup_parms_stateUp7L1	-28.310230075504645
+getup_parms_stateUp7MinTime	0.2
+getup_parms_stateUp9A1	46.60215905763356
+getup_parms_stateUp9L1	-90.29680084623156
+getup_parms_stateUp9L4	-45.66593008367499
+getup_parms_stateUp9L5	-47.3966607282542
+getup_parms_stateUp9L6	-63.76376603815571
+getup_parms_stateUp9MinTime	0.2
+getup_parms_stateUp11A1	3.592540038790991
+getup_parms_stateUp11L1	-60.16186063609875
+getup_parms_stateUp11L5	-66.94418816067675
+getup_parms_stateUp11MinTime	0.4
+getup_parms_stateUp13A1	-95.06021619327173
+getup_parms_stateUp13L1	-27.726371071345866
+getup_parms_stateUp13L3	33.044752335210546
+getup_parms_stateUp13L4	-29.541237439782954
+getup_parms_stateUp13L5	-26.379841635865372
+getup_parms_stateUp13MinTime	0.04 
+getup_parms_stateUp15MinTime	0.6
+
+
 #################################
 ### OPTIMIZED WALK PARAMETERS ###
 #################################

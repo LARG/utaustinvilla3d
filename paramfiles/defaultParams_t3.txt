@@ -4,44 +4,44 @@
 ### GETUP PARAMETERS ###
 ########################
 
-# default getup off front params
+# default getup off front params - optimized for no self collisions
 getup_parms_stateDownInitialWait	0.5
-getup_parms_stateDown3A1	30.7764844017273
-getup_parms_stateDown3L3	119.3951092085372
+getup_parms_stateDown3A1	31.373778672868006
+getup_parms_stateDown3L3	132.04992361431232
 getup_parms_stateDown3MinTime	0.04
-getup_parms_stateDown5L1	-39.89410836656779
+getup_parms_stateDown5L1	-40.19865222799057
 getup_parms_stateDown5MinTime	0.9
-getup_parms_stateDown7L1	-19.1526346095759
-getup_parms_stateDown7L3	55.60616379393237
+getup_parms_stateDown7L1	-5.303130226020178
+getup_parms_stateDown7L3	61.27667080700868
 getup_parms_stateDown7MinTime	0.3
 getup_parms_stateDown10MinTime	0.8
 
-# default getup off back params
+# default getup off back params - optimized for no self collisions
 getup_parms_stateUpInitialWait	0.5
-getup_parms_stateUp3A1	-88.44879972730456
-getup_parms_stateUp3A2	1.2650751481354092
-getup_parms_stateUp3A4	15.318596218175323
-getup_parms_stateUp3L3	0.27072610408623543
+getup_parms_stateUp3A1	-74.19212693705215
+getup_parms_stateUp3A2	22.059688990978437
+getup_parms_stateUp3A4	-2.805504697930181
+getup_parms_stateUp3L3	28.62816708004984
 getup_parms_stateUp3MinTime	0.2
-getup_parms_stateUp5L3	126.53954277987913
+getup_parms_stateUp5L3	150.94279526388357
 getup_parms_stateUp5MinTime	0.04
-getup_parms_stateUp7L1	-90.02522017910263
+getup_parms_stateUp7L1	-77.42911633035874
 getup_parms_stateUp7MinTime	0.2
-getup_parms_stateUp9A1	5.918237260643215
-getup_parms_stateUp9L1	-109.96698066442023
-getup_parms_stateUp9L4	-98.17300293001794
-getup_parms_stateUp9L5	-65.20666747068728
-getup_parms_stateUp9L6	-25.76640050991913
+getup_parms_stateUp9A1	7.430718528871051
+getup_parms_stateUp9L1	-97.75479706018714
+getup_parms_stateUp9L4	-117.6731135265411
+getup_parms_stateUp9L5	-56.61496431999153
+getup_parms_stateUp9L6	-12.254544769250895
 getup_parms_stateUp9MinTime	0.2
-getup_parms_stateUp11A1	6.330268348632011
-getup_parms_stateUp11L1	-69.78058382649299
-getup_parms_stateUp11L5	-52.56153330503647
+getup_parms_stateUp11A1	-16.438083494272085
+getup_parms_stateUp11L1	-140.85938039354576
+getup_parms_stateUp11L5	-10.078725855976106
 getup_parms_stateUp11MinTime	0.4
-getup_parms_stateUp13A1	-115.9932393763986
-getup_parms_stateUp13L1	-0.31676877560308014
-getup_parms_stateUp13L3	35.079736274565654
-getup_parms_stateUp13L4	-38.191314685309145
-getup_parms_stateUp13L5	36.389822164512594
+getup_parms_stateUp13A1	-134.62269922433833
+getup_parms_stateUp13L1	4.809371288194855
+getup_parms_stateUp13L3	58.230989205302535
+getup_parms_stateUp13L4	-24.26206719200843
+getup_parms_stateUp13L5	1.3567977261284696
 getup_parms_stateUp13MinTime	0.04 
 getup_parms_stateUp15MinTime	0.6
 
