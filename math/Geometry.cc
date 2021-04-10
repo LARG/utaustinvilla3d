@@ -892,7 +892,7 @@ Point3D Point3D::operator + ( const double &d ) const
   \return the sum of the current Point3D and the given Point3D */
 Point3D Point3D::operator + ( const Point3D &p ) const
 {
-    return ( Point3D( x + p.x, y + p.y , z + p.z ) );
+    return ( Point3D( x + p.x, y + p.y, z + p.z ) );
 }
 
 /*! Overloaded version of the binary minus operator for subtracting a given
@@ -1860,7 +1860,7 @@ ostream& operator << ( ostream &os, Circle c )
   \return string representation of circle */
 const char* Circle::__str__()
 {
-    static char buffer[ 128 ];
+    static char buffer[ 256 ];
     sprintf( buffer,"c: %s, r: %f ", m_pCenter.__str__(), m_radius );
     return buffer;
 }

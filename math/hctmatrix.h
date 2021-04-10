@@ -46,6 +46,8 @@ public:
     HCTMatrix(const int &mode, const VecPosition &translateVector);
     HCTMatrix(const int &mode, const VecPosition &axis, const double &rotateAngle);
 
+    HCTMatrix& operator=(const HCTMatrix& m) = default;
+
     inline void setCell(const int &i, const int &j, const double &v) {
         cell[i][j] = v;
     }
