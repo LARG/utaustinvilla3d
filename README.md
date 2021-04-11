@@ -22,6 +22,7 @@ This release is based off the UT Austin Villa RoboCup 3D simulation league team.
 * Example behaviors/tasks for optimizing a kick and forward walk
 * Support for Gazebo RoboCup 3D simulation plugin (https://bitbucket.org/osrf/robocup3ds)
 * Scripts and code for collecting game statistics
+* Support for running with fat proxy (https://github.com/magmaOffenburg/magmaFatProxy)
 
 #### What is not included: 
 * The team's complete set of skills such as long kicks and goalie dives
@@ -65,6 +66,10 @@ First be sure to start the simulation server running.
 ##### Run penalty kick goalie:
 ```bash
 ./start_penalty_goalie.sh <host>
+```
+##### Run team with fat proxy:
+```bash
+./start_fat_proxy.sh <host> -p <proxy_port>
 ```
 ##### Run agent for Gazebo RoboCup 3D simulation plugin:
 ```bash

@@ -103,6 +103,7 @@ protected:
     VecPosition kickDirection;
     int kickType;
     VecPosition kickTarget;
+    double kickVerticalAngle;
 
     double lastGetupRecoveryTime;
 
@@ -195,7 +196,7 @@ protected:
     void resetKickState();
 
     double computeKickCost(VecPosition target, SkillType kickType);
-    SkillType kickBall(const int kickTypeToUse, const VecPosition &target);
+    SkillType kickBall(const int kickTypeToUse, const VecPosition &target, const double kickVerticalAngle=0.0);
     SkillType kickBallAtPresetTarget();
 
     void getTargetDistanceAndAngle(const VecPosition &target, double &distance, double &angle);

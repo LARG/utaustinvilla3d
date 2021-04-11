@@ -37,6 +37,9 @@ static bool gLoop = true;
 // (should probably make this not global and store this value in a better way)
 int agentBodyType = 0;
 
+// Global variable if using the fat proxy
+bool fFatProxy = false;
+
 // SIGINT handler prototype
 extern "C" void handler(int sig)
 {
@@ -247,6 +250,9 @@ void ReadOptions(int argc, char* argv[])
         }
         else if (strcmp(argv[i], "--recordstats") == 0) {
             agentType = "recordstats";
+        }
+        else if (strcmp(argv[i], "--fatproxy") == 0) {
+            fFatProxy = true;
         }
     } // for-loop
 }

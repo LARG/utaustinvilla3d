@@ -4,6 +4,8 @@
 
 extern int agentBodyType;
 
+extern bool fFatProxy;
+
 static Effectors UTWalkJointToSimEffectors(const Joint j) {
     switch (j) {
     case HeadYaw:
@@ -173,6 +175,28 @@ string NaoBehavior::composeAction() {
             cout << "\tMy y: " << myY << "\n";
             cout << "\n";
             */
+        }
+    }
+
+    // Add dash command if using fat proxy and walking
+    if (fFatProxy && bodyModel->useOmniWalk()) {
+        double x = velocity.x*100;
+        double y = velocity.y*100;
+        double rot = velocity.rot*60;
+        ss << "(proxy dash " << to_string(x) << " " << to_string(y) << " " << to_string(rot) << ")";
+    }
+
+    // Add kick command if using fat proxy and kicking
+    if (fFatProxy && isKickSkill(worldModel->getLastSkill())) {
+        const double KICKABLE_MARGIN = 0.44;
+        double ballDistance = me.getDistanceTo(ball) + abs(worldModel->getBall().getZ());
+        if (ballDistance <= KICKABLE_MARGIN) {
+            VecPosition kickTargetLocal = worldModel->g2l(kickTarget);
+            double kickAngle = atan2Deg(kickTargetLocal.getY(), kickTargetLocal.getX());
+            double deltaAngle = abs(kickAngle)/180.0;
+            double kickDistance = kickTargetLocal.getMagnitude();
+            double kickPower = kickDistance/(1.5 * (1 - 0.25 * deltaAngle - 0.25 * ballDistance / KICKABLE_MARGIN));
+            ss << "(proxy kick " << to_string(kickPower) << " " << to_string(kickAngle) << " " << to_string(kickVerticalAngle) << ")";
         }
     }
 

@@ -333,6 +333,9 @@ void NaoBehavior::act() {
 
 
             if (currentSkill != SKILL_WALK_OMNI) {
+                velocity.x = 0;
+                velocity.y = 0;
+                velocity.rot = 0;
                 velocity.paramSet = WalkRequestBlock::PARAMS_DEFAULT;
             }
 

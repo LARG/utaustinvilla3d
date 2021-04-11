@@ -7,6 +7,8 @@
 
 extern int agentBodyType;
 
+extern bool fFatProxy;
+
 // The names of important kicking parameters
 const string& ANGLE = "angle";
 const string& CW_ANGLE_THRESH = "cw_angle_thresh";
@@ -22,8 +24,9 @@ const string& BOUNDING_BOX_BOTTOM = "max_displacement_bottom";
 /*
  * Basic method to kick (or dribble) the ball toward a target position
  */
-SkillType NaoBehavior::kickBall(const int kickTypeToUse, const VecPosition &target) {
+SkillType NaoBehavior::kickBall(const int kickTypeToUse, const VecPosition &target, const double verticalAngle) {
     kickTarget = target;
+    kickVerticalAngle = verticalAngle;  // Only used with fat proxy
     kickDirection = (kickTarget - ball).normalize();
 
     kickType = kickTypeToUse;
@@ -180,6 +183,8 @@ SkillType NaoBehavior::kickBallAtPresetTarget() {
 void NaoBehavior::resetKickState() {
     currentKick = SKILL_NONE;
     currentKickType = KICK_NONE;
+    kickTarget = VecPosition(0, 0, 0);
+    kickVerticalAngle = 0.0;
 }
 
 
@@ -241,6 +246,9 @@ SkillType NaoBehavior::kickBallAtTargetSimplePositioning(const VecPosition &targ
         inPosAngle = abs(walkRotation) < getStdNameParameter(kick_skill, walkRotation < 0 ? CCW_ANGLE_THRESH : CW_ANGLE_THRESH);
     }
     bool inPosition = inPosY && inPosX && inPosAngle;
+    if (fFatProxy) {
+        inPosition = me.getDistanceTo(ball) <= 0.25;
+    }
 
     bool canExecute = true;
 
@@ -248,7 +256,7 @@ SkillType NaoBehavior::kickBallAtTargetSimplePositioning(const VecPosition &targ
     const double BALL_VEL_THRESH = .1;
 
     // Don't try and kick a moving ball
-    if (ballVel.getMagnitude() > BALL_VEL_THRESH) {
+    if (ballVel.getMagnitude() > BALL_VEL_THRESH && !fFatProxy) {
         canExecute = false;
     }
 
