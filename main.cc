@@ -72,6 +72,7 @@ void PrintHelp()
     cout << " --recordstats\t record game statistics" << endl;
     cout << " --mhost=<IP>\tIP of the monitor for sending draw commands" << endl;
     cout << " --mport <port>\tport of the monitor for training command parser" << endl;
+    cout << " --fatproxy\trun using fat proxy" << endl;
 
     cout << "\n";
 }
