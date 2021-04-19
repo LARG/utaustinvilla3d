@@ -58,6 +58,7 @@ set(SRCS
   behaviors/strategy.cc
   behaviors/pkbehaviors.cc
   behaviors/gazebobehavior.cc
+  behaviors/simplesoccer.cc
   servercomm/primitives.cc
   parser/parser.cc 
   math/hctmatrix.cc

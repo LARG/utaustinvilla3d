@@ -11,6 +11,7 @@
 #include "behaviors/naobehavior.h"
 #include "optimization/optimizationbehaviors.h"
 #include "behaviors/pkbehaviors.h"
+#include "behaviors/simplesoccer.h"
 #include "behaviors/gazebobehavior.h"
 #include "stats/recordstatsbehavior.h"
 
@@ -245,6 +246,9 @@ void ReadOptions(int argc, char* argv[])
         }
         else if (strcmp(argv[i], "--pkshooter") == 0) {
             agentType = "pkshooter";
+        }
+        else if (strcmp(argv[i], "--simplesoccer") == 0) {
+            agentType = "simplesoccer";
         }
         else if (strcmp(argv[i], "--gazebo") == 0) {
             agentType = "gazebo";
@@ -495,6 +499,9 @@ void Run()
     }
     else if (agentType == "pkshooter") {
         behavior = new PKShooterBehavior(teamName, uNum, namedParams, rsg);
+    }
+    else if (agentType == "simplesoccer") {
+        behavior = new SimpleSoccerBehavior(teamName, uNum, namedParams, rsg);
     }
     else if (agentType == "gazebo") {
         agentBodyType = GAZEBO_AGENT_TYPE;
