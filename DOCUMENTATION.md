@@ -50,7 +50,7 @@ See the files in the [audio](audio) directory which implement a communication sy
 
 
 ### Strategy
-Most strategy and high level behavior has been removed from the code release, however a few example demo behaviors are provided in [behaviors/strategy.cc](behaviors/strategy.cc).  Additionally a simple soccer behavior with a team attempting to kick the ball toward the opponent's goal using a basic formation and dynamic greedy role assignment is provided in [behaviors/simplesoccer.cc](behaviors/simplesoccer.cc). The UT Austin Villa team has published papers about some of its high level strategy including role assignment to coordinate the movement of agents.  More information about  role assignment, and released code for performing role assignment, can be found in the following papers and locations: 
+Most strategy and high level behavior has been removed from the code release, however a few example demo behaviors are provided in [behaviors/strategy.cc](behaviors/strategy.cc).  Additionally an example simple soccer behavior with a team attempting to kick the ball toward the opponent's goal using a basic formation and dynamic greedy role assignment is provided in [behaviors/simplesoccer.cc](behaviors/simplesoccer.cc). The UT Austin Villa team has published papers about some of its high level strategy including role assignment to coordinate the movement of agents.  More information about  role assignment, and released code for performing role assignment, can be found in the following papers and locations: 
 
 Patrick MacAlpine, Eric Price, and Peter Stone.  
 SCRAM: Scalable Collision-avoiding Role Assignment with Minimal-makespan for Formational Positioning.  
