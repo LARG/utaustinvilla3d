@@ -20,14 +20,15 @@ This release is based off the UT Austin Villa RoboCup 3D simulation league team.
 * Code for drawing objects in the roboviz monitor
 * Communication system previously provided for use in drop-in player challenges
 * Example behaviors/tasks for optimizing a kick and forward walk
+* Example simple soccer behavior with basic formation and dynamic greedy role assignment
+* Support for running with fat proxy (https://github.com/magmaOffenburg/magmaFatProxy)
 * Support for Gazebo RoboCup 3D simulation plugin (https://bitbucket.org/osrf/robocup3ds)
 * Scripts and code for collecting game statistics
-* Support for running with fat proxy (https://github.com/magmaOffenburg/magmaFatProxy)
 
 #### What is not included: 
-* The team's complete set of skills such as long kicks and goalie dives
-* Optimized parameters for behaviors such as the team's fastest walks (slow and stable walk engine parameters are included, as well as optimized walk engine parameters for positioning/dribbling and approaching the ball to kick)
-* High level strategy including formations and role assignment
+* The UT Austin Villa team's complete set of skills such as long kicks and goalie dives
+* Optimized parameters for behaviors such as the UT Austin Villa team's fastest walks (slow and stable walk engine parameters are included, as well as optimized walk engine parameters for positioning/dribbling and approaching the ball to kick)
+* The UT Austin Villa team's high level strategy including formations and role assignment
 
 
 ### Requirements:
@@ -71,6 +72,10 @@ First be sure to start the simulation server running.
 ```bash
 ./start_fat_proxy.sh <host> -p <proxy_port>
 ```
+##### Run simple soccer example team:
+```bash
+./start_simple_soccer.sh <host>
+```
 ##### Run agent for Gazebo RoboCup 3D simulation plugin:
 ```bash
 ./start_gazebo.sh <host>
@@ -93,7 +98,8 @@ See [DOCUMENTATION](DOCUMENTATION.md) for some high level documentation about th
 
 
 ### Demo behaviors:
-See the methods in `selectSkill()` in [behaviors/strategy.cc](behaviors/strategy.cc) for demo behaviors.
+See the methods in `selectSkill()` in [behaviors/strategy.cc](behaviors/strategy.cc) for demo behaviors.  
+See [behaviors/simplesoccer.cc](behaviors/simplesoccer.cc) for an example simple soccer team behavior with a basic formation and dynamic greedy role assignment.
 
 
 ### Optimization task examples:
@@ -109,26 +115,26 @@ See the [optimization](optimization) directory.
 
 If you use this code for research purposes, please consider citing one or more research papers listed at the above link which includes the following topics and papers:
 ##### Code Release
-Patrick MacAlpine and Peter Stone. 
-UT Austin Villa RoboCup 3D Simulation Base Code Release. 
+Patrick MacAlpine and Peter Stone.  
+UT Austin Villa RoboCup 3D Simulation Base Code Release.  
 In Sven Behnke, Daniel D. Lee, Sanem Sariel, and Raymond Sheh, editors, RoboCup 2016: Robot Soccer World Cup XX, Lecture Notes in Artificial Intelligence, Springer Verlag, Berlin, 2016.
 (http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-LNAI16-MacAlpine2.html)
 
 ##### Walk Engine 
-Patrick MacAlpine, Samuel Barrett, Daniel Urieli, Victor Vu, and Peter Stone. 
-Design and Optimization of an Omnidirectional Humanoid Walk: A Winning Approach at the RoboCup 2011 3D Simulation Competition. 
+Patrick MacAlpine, Samuel Barrett, Daniel Urieli, Victor Vu, and Peter Stone.  
+Design and Optimization of an Omnidirectional Humanoid Walk: A Winning Approach at the RoboCup 2011 3D Simulation Competition.  
 In Proceedings of the Twenty-Sixth AAAI Conference on Artificial Intelligence (AAAI), July 2012.
 (http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-AAAI12-MacAlpine.html)
 
 ##### Optimization 
-Patrick MacAlpine and Peter Stone. 
-Overlapping Layered Learning.
+Patrick MacAlpine and Peter Stone.  
+Overlapping Layered Learning.  
 Artificial Intelligence (AIJ), 254:21-43, Elsevier, January 2018.
 (http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-AIJ18-MacAlpine.html)
 
 ##### Winning team paper
-Patrick MacAlpine, Josiah Hanna, Jason Liang, and Peter Stone. 
-UT Austin Villa: RoboCup 2015 3D Simulation League Competition and Technical Challenges Champions. 
+Patrick MacAlpine, Josiah Hanna, Jason Liang, and Peter Stone.  
+UT Austin Villa: RoboCup 2015 3D Simulation League Competition and Technical Challenges Champions.  
 In Luis Almeida, Jianmin Ji, Gerald Steinbauer, and Sean Luke, editors, RoboCup-2015: Robot Soccer World Cup XIX, Lecture Notes in Artificial Intelligence, Springer Verlag, Berlin, 2016.
 (http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-LNAI15-MacAlpine.html)
 
