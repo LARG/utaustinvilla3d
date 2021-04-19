@@ -94,7 +94,8 @@ First be sure to start the simulation server running.
 ```
 
 ### Documentation:
-See [DOCUMENTATION](DOCUMENTATION.md) for some high level documentation about the codebase.
+See [DOCUMENTATION](DOCUMENTATION.md) for some high level documentation about the codebase.  
+View a tutorial about using the code base ([YouTube](https://www.youtube.com/watch?v=5-8YFmJlqhk), [mp4](https://www.cs.utexas.edu/~AustinVilla/sim/3dsimulation/AustinVilla3DSimulationFiles/2021/videos/utaustinvilla3d_tutorial.mp4)).
 
 
 ### Demo behaviors:
