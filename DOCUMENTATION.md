@@ -25,8 +25,8 @@ Values for skills and other configurable variables can be read in and loaded at 
 ### Walk Engine 
 Agents use a double inverted pendulum omnidirectional walk engine to move.  Code for the walk engine can be found in the [utwalk](utwalk) directory.  To move to a target location on the field agents can use `NaoBehavior::goToTarget()` or, to specify an exact direction, rotation, and speed to the walk engine,  `NaoBehavior::getWalk()` can be used.  Parameters that control the walk engine are contained in parameter files, and a default set of walk engine parameters that provide a slow and stable walk, as well as optimized walk engine parameters for positioning/dribbling and approaching the ball to kick, are included in this release.  More information about the walk engine, as well as the process UT Austin Villa used to optimize parameters for the walk engine, can be found in the following paper:
 
-Patrick MacAlpine, Samuel Barrett, Daniel Urieli, Victor Vu, and Peter Stone.
-Design and Optimization of an Omnidirectional Humanoid Walk: A Winning Approach at the RoboCup 2011 3D Simulation Competition. 
+Patrick MacAlpine, Samuel Barrett, Daniel Urieli, Victor Vu, and Peter Stone.  
+Design and Optimization of an Omnidirectional Humanoid Walk: A Winning Approach at the RoboCup 2011 3D Simulation Competition.  
 In Proceedings of the Twenty-Sixth AAAI Conference on Artificial Intelligence (AAAI), July 2012.
 (http://www.cs.utexas.edu/~AustinVilla/sim/3dsimulation/AustinVilla3DSimulationFiles/2011/html/walk.html)
 
@@ -34,13 +34,13 @@ In Proceedings of the Twenty-Sixth AAAI Conference on Artificial Intelligence (A
 ### Kicking 
 Two example kicking skills are included in this code release: one basic kicking skill and the other using inverse kinematics.  To kick the ball use the `kickBall()` method which takes in both a kick type (can be either a kick or dribble) and a position to kick the ball toward.  Code for approaching the ball and executing a kick is in [behaviors/kicking.cc](behaviors/kicking.cc).  More information about what the UT Austin Villa team has done to develop and optimize kicks can be found in the following publications:
 
-Mike Depinet, Patrick MacAlpine, and Peter Stone. 
-Keyframe Sampling, Optimization, and Behavior Integration: Towards Long-Distance Kicking in the RoboCup 3D Simulation League. 
+Mike Depinet, Patrick MacAlpine, and Peter Stone.  
+Keyframe Sampling, Optimization, and Behavior Integration: Towards Long-Distance Kicking in the RoboCup 3D Simulation League.  
 In Reinaldo A. C. Bianchi, H. Levent Akin, Subramanian Ramamoorthy, and Komei Sugiura, editors, RoboCup-2014: Robot Soccer World Cup XVIII, Lecture Notes in Artificial Intelligence, Springer Verlag, Berlin, 2015.
 (http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-LNAI14-Depinet.html)
 
-Patrick MacAlpine, Daniel Urieli, Samuel Barrett, Shivaram Kalyanakrishnan, Francisco Barrera, Adrian Lopez-Mobilia, Nicolae Stiurua, Victor Vu, and Peter Stone. 
-UT Austin Villa 2011: A Champion Agent in the RoboCup 3D Soccer Simulation Competition. 
+Patrick MacAlpine, Daniel Urieli, Samuel Barrett, Shivaram Kalyanakrishnan, Francisco Barrera, Adrian Lopez-Mobilia, Nicolae Stiurua, Victor Vu, and Peter Stone.  
+UT Austin Villa 2011: A Champion Agent in the RoboCup 3D Soccer Simulation Competition.  
 In Proc. of 11th Int. Conf. on Autonomous Agents and Multiagent Systems (AAMAS), June 2012.
 (http://www.cs.utexas.edu/~AustinVilla/sim/3dsimulation/AustinVilla3DSimulationFiles/2011/html/kick.html)
 
@@ -50,15 +50,15 @@ See the files in the [audio](audio) directory which implement a communication sy
 
 
 ### Strategy
-Most strategy and high level behavior has been removed from the code release,  however a few example demo behaviors are provided in [behaviors/strategy.cc](behaviors/strategy.cc).  The UT Austin Villa team has published papers about some of its high level strategy including role assignment to coordinate the movement of agents.  More information about  role assignment, and released code for performing role assignment, can be found in the following papers and locations: 
+Most strategy and high level behavior has been removed from the code release, however a few example demo behaviors are provided in [behaviors/strategy.cc](behaviors/strategy.cc).  Additionally a simple soccer behavior with a team attempting to kick the ball toward the opponent's goal using a basic formation and dynamic greedy role assignment is provided in [behaviors/simplesoccer.cc](behaviors/simplesoccer.cc). The UT Austin Villa team has published papers about some of its high level strategy including role assignment to coordinate the movement of agents.  More information about  role assignment, and released code for performing role assignment, can be found in the following papers and locations: 
 
-Patrick MacAlpine, Eric Price, and Peter Stone.
-SCRAM: Scalable Collision-avoiding Role Assignment with Minimal-makespan for Formational Positioning.
+Patrick MacAlpine, Eric Price, and Peter Stone.  
+SCRAM: Scalable Collision-avoiding Role Assignment with Minimal-makespan for Formational Positioning.  
 In the Proceedings of the Twenty-Ninth AAAI Conference on Artificial Intelligence (AAAI-15) in Austin, Texas, USA, January 2015.
 (http://www.cs.utexas.edu/~AustinVilla/sim/3dsimulation/AustinVilla3DSimulationFiles/2013/html/scram.html)
 
-Patrick MacAlpine, Francisco Barrera, and Peter Stone. 
-Positioning to Win: A Dynamic Role Assignment and Formation Positioning System. 
+Patrick MacAlpine, Francisco Barrera, and Peter Stone.  
+Positioning to Win: A Dynamic Role Assignment and Formation Positioning System.  
 In Xiaoping Chen, Peter Stone, Luis Enrique Sucar, and Tijn Van der Zant, editors, RoboCup-2012: Robot Soccer World Cup XVI, Lecture Notes in Artificial Intelligence, Springer Verlag, Berlin, 2013.
 (http://www.cs.utexas.edu/~AustinVilla/sim/3dsimulation/AustinVilla3DSimulationFiles/2011/html/positioning.html)
 
@@ -70,8 +70,8 @@ Behaviors executed during penalty kicks are in [behaviors/pkbehaviors.&ast;](beh
 ### Optimization 
 A considerable amount of the UT Austin Villa team's efforts in preparing for RoboCup competitions has been in the area of skill optimization and optimizing parameters for walks and kicks.  Example agents for optimizing a kick and forward walk are provided in the [optimization](optimization) directory.  Optimization agents perform some task (such as kicking a ball) and then determine how well they did at the task (such as how far they kicked the ball) with the `updateFitness()` method.  When performing an optimization task agents are able to change the world as needed (such as move themselves and the ball around) by sending training command parser commands to the server on the monitor port through the `setMonMessage()` method.  More information about optimizations performed by the team can be found in the following paper:
 
-Patrick MacAlpine and Peter Stone. 
-Overlapping Layered Learning.
+Patrick MacAlpine and Peter Stone.  
+Overlapping Layered Learning.  
 Artificial Intelligence (AIJ), 254:21-43, Elsevier, January 2018.
 (http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-AIJ18-MacAlpine.html)
 
@@ -87,7 +87,7 @@ Some useful scripts for copying shared objects to the [libs](libs) directory to 
 ### More Documentation 
 More information about the UT Austin Villa agent, including a fairly comprehensive description of its behavior, can be found in the following paper:
 
-Patrick MacAlpine, Daniel Urieli, Samuel Barrett, Shivaram Kalyanakrishnan, Francisco Barrera, Adrian Lopez-Mobilia, Nicolae Stiurua, Victor Vu, and Peter Stone. 
-UT Austin Villa 2011 3D Simulation Team Report. 
+Patrick MacAlpine, Daniel Urieli, Samuel Barrett, Shivaram Kalyanakrishnan, Francisco Barrera, Adrian Lopez-Mobilia, Nicolae Stiurua, Victor Vu, and Peter Stone.   
+UT Austin Villa 2011 3D Simulation Team Report.  
 Technical Report AI11-10, The University of Texas at Austin, Department of Computer Science, AI Laboratory, 2011.
 (http://www.cs.utexas.edu/~pstone/Papers/bib2html/b2hd-AI1110-macalpine.html)
